@@ -1,0 +1,51 @@
+#env:
+#  TERM: xterm-256color
+
+#Fonts
+font:
+  use_thin_strokes: true
+  size: 12.0
+  normal:
+    family: BlexMono Nerd Font Mono
+    style: Light
+  bold:
+    family: BlexMono Nerd Font Mono
+    style: Medium
+
+# Window
+window:
+  padding:
+    x: 0 
+    y: 0 
+  decorations: none
+
+draw_bold_text_with_bright_colors: true
+
+colors:
+  # Default colors
+  primary:
+    background: '0xf7f7f7'
+    foreground: '0x1a1a1a'
+
+  # Normal colors
+  normal:
+    black:   '0x1a1a1a'
+    red:     '0xcc491c'
+    green:   '0x40831d'
+    yellow:  '0xa66707'
+    blue:    '0x3377b9'
+    magenta: '0xb24fa3'
+    cyan:    '0x4fb0b2'
+    white:   '0xd6d6d6'
+
+  # Bright colors
+  bright:
+    black:   '0x1a0606'
+    red:     '0xcc3c0b'
+    green:   '0x2d8300'
+    yellow:  '0xa66400'
+    blue:    '0x1c6cb9'
+    magenta: '0xb2299d'
+    cyan:    '0x24afb2'
+    white:   '0xfcfcfc'
+
