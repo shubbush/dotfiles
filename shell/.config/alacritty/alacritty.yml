@@ -15,7 +15,7 @@ font:
 # Window
 window:
   padding:
-    x: 0 
+    x: 6 
     y: 0 
   decorations: none
 
