@@ -8,7 +8,8 @@ set nocompatible
 let g:lightline = {
    \       'colorscheme': 'one'
    \   }
-
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " Turn on syntax highlighting.
 syntax on
 " Show line numbers.
@@ -49,6 +50,12 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+
+" NERDTree 
+nmap <C-n> :NERDTreeToggle<CR>
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
 " =============================================================================
 " # PLUGINS
 " =============================================================================
@@ -76,11 +83,15 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 
 " Syntactic language support
 Plug 'stephpy/vim-yaml'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'elzr/vim-json'
 Plug 'ap/vim-css-color'
+
+" NERDTree icons (should be loaded as the very last one
+Plug 'ryanoasis/vim-devicons'
+
 
 call plug#end()
 
