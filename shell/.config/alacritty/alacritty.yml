@@ -22,6 +22,12 @@ window:
 draw_bold_text_with_bright_colors: true
 
 colors:
+  # Cursor
+  cursor:
+    cursor: '#03aff3'
+  selection:
+    background: '#c4e9f3'
+    text: '0x1a1a1a'
   # Default colors
   primary:
     background: '0xf7f7f7'
@@ -36,7 +42,7 @@ colors:
     blue:    '0x3377b9'
     magenta: '0xb24fa3'
     cyan:    '0x4fb0b2'
-    white:   '0xd6d6d6'
+    white:   '0x858585'
 
   # Bright colors
   bright:
@@ -47,5 +53,5 @@ colors:
     blue:    '0x1c6cb9'
     magenta: '0xb2299d'
     cyan:    '0x24afb2'
-    white:   '0xfcfcfc'
+    white:   '0xf7f7f7'
 
