@@ -1,8 +1,11 @@
 [user]
-      # These values are set in ~/.gitconfig_local
+	# These values are set in ~/.gitconfig_local
 
 [include]
-      path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
 
 [push]
 	default = current
+
+[alias]
+	graph = log --all --decorate --graph --oneline
