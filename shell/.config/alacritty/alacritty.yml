@@ -3,55 +3,62 @@
 
 #Fonts
 font:
-  use_thin_strokes: true
-  size: 12.0
+  use_thin_strokes: false
+  size: 14.0
   normal:
-    family: BlexMono Nerd Font Mono
-    style: Light
+    family: Iosevka
+    style: Light Extended
   bold:
-    family: BlexMono Nerd Font Mono
-    style: Medium
+    family: Iosevka
+    style: Extended
+  offset:
+    x: 0
+    y: 3
 
 # Window
 window:
   padding:
-    x: 6 
-    y: 6 
+    x: 6
+    y: 6
   decorations: none
 
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
+tabspaces: 2
+render_timer: true
 
+selection:
+  save_to_clipboard: true
+
+
+# github Alacritty Colors
 colors:
-  # Cursor
-  cursor:
-    cursor: '#03aff3'
-  selection:
-    background: '#c4e9f3'
-    text: '0x1a1a1a'
   # Default colors
   primary:
-    background: '0xf7f7f7'
-    foreground: '0x1a1a1a'
+    background: '0xffffff'
+    foreground: '0x24292f'
 
   # Normal colors
   normal:
-    black:   '0x1a1a1a'
-    red:     '0xcc491c'
-    green:   '0x40831d'
-    yellow:  '0xa66707'
-    blue:    '0x3377b9'
-    magenta: '0xb24fa3'
-    cyan:    '0x4fb0b2'
-    white:   '0x858585'
+    black:   '0x24292e'
+    red:     '0xd73a49'
+    green:   '0x28a745'
+    yellow:  '0xdbab09'
+    blue:    '0x0366d6'
+    magenta: '0x5a32a3'
+    cyan:    '0x0598bc'
+    white:   '0x6a737d'
 
   # Bright colors
   bright:
-    black:   '0x1a0606'
-    red:     '0xcc3c0b'
-    green:   '0x2d8300'
-    yellow:  '0xa66400'
-    blue:    '0x1c6cb9'
-    magenta: '0xb2299d'
-    cyan:    '0x24afb2'
-    white:   '0xf7f7f7'
+    black:   '0x959da5'
+    red:     '0xcb2431'
+    green:   '0x22863a'
+    yellow:  '0xb08800'
+    blue:    '0x005cc5'
+    magenta: '0x5a32a3'
+    cyan:    '0x3192aa'
+    white:   '0xd1d5da'
 
+  indexed_colors:
+    - { index: 16, color: '0xd18616' }
+    - { index: 17, color: '0xcb2431' }
