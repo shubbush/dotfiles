@@ -105,3 +105,10 @@ EOF
 set background=light
 let g:one_allow_italics = 1
 colors github_light 
+
+" Plugin settings
+"
+" vim_markdown
+"disable concealing in markdown
+let g:vim_markdown_conceal = 0 
+let g:vim_markdown_conceal_code_blocks = 0
