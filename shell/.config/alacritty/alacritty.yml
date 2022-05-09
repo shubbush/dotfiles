@@ -6,11 +6,11 @@ font:
   use_thin_strokes: false
   size: 14.0
   normal:
-    family: Iosevka Term
-    style: Light Extended
+    family: BlexMono Nerd Font Mono
+    style: Book
   bold:
-    family: Iosevka Term
-    style: Extended
+    family: BlexMono Nerd Font Mono
+    style: Medium
   offset:
     x: 0
     y: 3
