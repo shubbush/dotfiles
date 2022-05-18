@@ -12,7 +12,7 @@ font:
     family: BlexMono Nerd Font Mono
     style: Medium
   offset:
-    x: 0
+    x: 1
     y: 3
 
 # Window
