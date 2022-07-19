@@ -3,6 +3,8 @@ let &packpath = &runtimepath
 source ~/.vimrc
 
 set nocompatible
+set nofoldenable    " disable folding
+
 
 " Lightline
 let g:lightline = {

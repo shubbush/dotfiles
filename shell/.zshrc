@@ -58,8 +58,6 @@ if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-clo
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source $HOME/.config/broot/launcher/bash/br
-
 export NVM_DIR="$HOME/.nvm"
 
 # bindkey -v
@@ -80,6 +78,7 @@ export EDITOR=nvim
 alias mv="mv -i"           # -i prompts before overwrite
 alias mkdir="mkdir -p"     # -p make parent dirs as needed
 alias df="df -h"           # -h prints human readable format
+alias grep="grep -i"       # -i ignore case
 
 eval "$(starship init zsh)"
 
