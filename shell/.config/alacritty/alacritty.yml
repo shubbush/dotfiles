@@ -20,7 +20,7 @@ window:
   padding:
     x: 6
     y: 6
-  decorations: none
+  decorations: full
 
 draw_bold_text_with_bright_colors: false
 tabspaces: 2
