@@ -31,9 +31,13 @@
 
 (setq doom-themes-treemacs-theme "doom-colors")
 
+;; org-mode
+(after! org
+  (setq org-image-actual-width (list 600)
+        org-startup-with-inline-images t
+        org-directory "~/notes/"))
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
 
 ;; Disable hl-line in all buffers. See https://github.com/doomemacs/doomemacs/issues/4206#issuecomment-734414502
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
