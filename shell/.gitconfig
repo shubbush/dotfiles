@@ -1,4 +1,6 @@
 [user]
+	name = shubbush
+	email = shubton@gmail.com
 	# These values are set in ~/.gitconfig_local
 
 [include]

@@ -4,9 +4,15 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# History
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+setopt INC_APPEND_HISTORY
+
 
 #Go
-export GOPATH="$HOME/go-workspace"
+export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
 # Path to your oh-my-zsh installation.
@@ -17,21 +23,10 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 # Directory contains tmux-256color terminfo
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
-plugins=(
-  git
-)
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -60,7 +55,9 @@ if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-clo
 
 export NVM_DIR="$HOME/.nvm"
 
-# bindkey -v
+bindkey -v
+
+[ -f  /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 # bindkey '^R' history-incremental-search-backward
 
 # 
