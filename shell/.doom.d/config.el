@@ -3,12 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
-
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -33,9 +27,10 @@
 
 ;; org-mode
 (after! org
-  (setq org-image-actual-width (list 600)
+  (setq org-image-actual-width (list 300)
         org-startup-with-inline-images t
         org-directory "~/notes/"))
+(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 
@@ -45,6 +40,12 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
+
+;; org-download
+(use-package org-download
+  :custom
+  (org-download-method 'directory)
+  (org-download-image-dir "~/notes/.assets"))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -62,3 +63,8 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+
+(custom-set-faces
+  '(org-level-1 ((t (:inherit outline-1 :height 1.1))))
+)
