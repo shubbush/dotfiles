@@ -69,6 +69,7 @@ bindkey -v
 
 alias dc=cd
 alias v=nvim
+alias docker=podman
 export EDITOR=nvim
 
 # Overwrite existing commands for better defaults
