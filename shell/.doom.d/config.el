@@ -29,7 +29,10 @@
 (after! org
   (setq org-image-actual-width (list 300)
         org-startup-with-inline-images t
-        org-directory "~/notes/"))
+        org-directory "~/notes/"
+        org-log-done 'time
+        org-todo-keywords '((sequence "TODO" "|" "DONE" "CANCELED"))))
+
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -68,3 +71,8 @@
 (custom-set-faces
   '(org-level-1 ((t (:inherit outline-1 :height 1.1))))
 )
+
+(add-to-list 'default-frame-alist '(height . 24))
+(add-to-list 'default-frame-alist '(width . 80))
+
+(setq org-ellipsis "⬎")
