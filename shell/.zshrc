@@ -60,7 +60,7 @@ if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-clo
 
 export NVM_DIR="$HOME/.nvm"
 
-bindkey -v
+# bindkey -v
 
 [ -f  /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 # bindkey '^R' history-incremental-search-backward
