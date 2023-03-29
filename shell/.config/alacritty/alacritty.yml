@@ -4,13 +4,13 @@
 #Fonts
 font:
   use_thin_strokes: false
-  size: 14.0
+  size: 13.0
   normal:
-    family: BlexMono Nerd Font Mono
-    style: Book
+    family: monospace
+    style: Regular
   bold:
-    family: BlexMono Nerd Font Mono
-    style: Medium
+    family: monospace
+    style: Bold
   offset:
     x: 1
     y: 3
@@ -28,6 +28,13 @@ render_timer: true
 
 selection:
   save_to_clipboard: true
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
 
 
 # github Alacritty Colors

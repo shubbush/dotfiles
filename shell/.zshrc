@@ -1,11 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Start tmux on every shell login	
-if [ -n "$PS1" ] && [ -z "$TMUX"  ]; then
-  tmux attach || exec tmux new-session && exit;
-fi
-
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
