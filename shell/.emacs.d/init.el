@@ -66,7 +66,7 @@
       org-startup-with-inline-images t
       org-hide-leading-start t
       org-ellipsis "⬎"
-      org-agenda-files '("~/todo" "~/todo/edu" "~/todo/2022"))
+      org-agenda-files '("~/todo" "~/todo/edu" ))
 (global-set-key "\C-ca" 'org-agenda)
 
 (custom-set-faces
@@ -126,6 +126,6 @@
 (setq org-default-notes-file "~/todo/inbox.org")
 (setq org-capture-templates
       '(("i" "Inbox"  entry (file org-default-notes-file)
-         "* TODO %?" :empty-lines 1)
+         "* TODO %?" )
         ("p" "Pocket" entry (file "~/todo/pocket.org")
-         "* TODO %(org-cliplink-capture)" :empty-lines 1)))
+         "* TODO %(org-cliplink-capture)")))
