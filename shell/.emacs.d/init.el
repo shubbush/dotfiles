@@ -58,7 +58,9 @@
   (load-theme 'modus-operandi :no-confirm))
 
 ;; org-mode
-(setq org-fontify-done-headline t
+(use-package org :straight (:type built-in)
+  :config
+  (setq org-fontify-done-headline t
       org-image-actual-width (list 300)
       org-startup-folded 'show2levels
       org-adapt-indentation t
@@ -67,7 +69,30 @@
       org-hide-leading-start t
       org-ellipsis "⬎"
       org-agenda-files '("~/todo" "~/todo/edu" ))
-(global-set-key "\C-ca" 'org-agenda)
+  (global-set-key (kbd "C-c a") #'org-agenda)
+  (setq org-todo-keywords
+      '((sequence "TODO" "|" "DONE" "CANCELED"))
+      org-todo-keyword-faces
+      '(("DONE" . (:foreground "#000000" ))
+        ("TODO" . (:foreground "#00605f" :weight semi-bold )))
+      )
+  (setq org-agenda-custom-commands
+      '(("c" "Today"
+         ((agenda ""
+		  ((org-agenda-span 'day)
+		   (org-agenda-overriding-header "Today")))
+          (tags "inbox"
+                   ((org-agenda-skip-function
+                     (lambda nil
+                       (org-agenda-skip-entry-if 'deadline 'scheduled 'todo 'done)))
+                    (org-agenda-overriding-header "Inbox")
+                    ))))
+	("u" "Upcoming"
+	 ((agenda ""
+	    ((org-agenda-span 90)
+             (org-agenda-show-all-dates nil)
+	     (org-agenda-overriding-header "Upcoming")))))))
+  )
 
 (custom-set-faces
  '(line-number ((t (:foreground "#babbbd" :background "#ffffff"))))
@@ -80,30 +105,7 @@
  '(org-scheduled ((t (:foreground "#000000")))))
 
 
-(setq org-todo-keywords
-      '((sequence "TODO" "|" "DONE" "CANCELED"))
-      org-todo-keyword-faces
-      '(("DONE" . (:foreground "#000000" ))
-        ("TODO" . (:foreground "#00605f" :weight semi-bold )))
-      )
 
-(setq org-agenda-custom-commands
-      '(("c" "Today"
-         ((agenda ""
-		  ((org-agenda-span 'day)
-		   (org-agenda-overriding-header "Today")))
-          (tags "inbox"
-                   ((org-agenda-skip-function
-                     (lambda nil
-                       (org-agenda-skip-entry-if (quote scheduled)
-                                                 (quote deadline))))
-                    (org-agenda-overriding-header "Inbox")
-                    ))))
-	("u" "Upcoming"
-	 ((agenda ""
-	    ((org-agenda-span 90)
-             (org-agenda-show-all-dates nil)
-	     (org-agenda-overriding-header "Upcoming")))))))
 
 ;; treemacs
 (use-package treemacs
