@@ -50,10 +50,10 @@ colors:
     red:     '#d73a49'
     green:   '#28a745'
     yellow:  '#dbab09'
-    blue:    '#0366d6'
-    magenta: '#5a32a3'
+    blue:    '#3d507b'
+    magenta: '#724d8d'
     cyan:    '#0598bc'
-    white:   '#6a737d'
+    white:   '#ffffff'
 
   # Bright colors
   bright:

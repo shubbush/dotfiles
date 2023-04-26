@@ -129,3 +129,39 @@
          "* TODO %?" )
         ("p" "Pocket" entry (file "~/todo/pocket.org")
          "* TODO %(org-cliplink-capture)")))
+
+;; elfeed
+(use-package elfeed
+  :config
+  (setq elfeed-db-directory "~/nextcloud/elfeed"
+        elfeed-show-entry-switch 'display-buffer)
+  (setq-default elfeed-search-filter "+unread ")
+  (add-to-list 'evil-motion-state-modes 'elfeed-search-mode)
+  (add-to-list 'evil-motion-state-modes 'elfeed-show-mode)
+
+  (evil-define-key* 'motion elfeed-search-mode-map
+                  "gb" #'elfeed-search-browse-url
+                  "gs" #'elfeed-search-show-entry
+                  "gr" #'elfeed-search-update--force
+                  "gR" #'elfeed-search-fetch)
+
+  (evil-define-key* 'motion elfeed-show-mode-map
+                  "gb" #'elfeed-show-visit
+                  "gj" #'elfeed-show-next
+                  "gk" #'elfeed-show-prev)) 
+
+
+(use-package elfeed-org
+  :config
+  (elfeed-org)
+  (setq rmh-elfeed-org-files (list "~/notes/elfeed.org")))
+
+(use-package elfeed-summary
+  :config
+  (setq elfeed-summary-settings
+	'((search (:title . "Unread"))
+	  (tag-groups (:repeat-feeds t)))
+        elfeed-summary-default-filter ""
+        elfeed-summary-look-back most-positive-fixnum)
+  :bind
+  ("C-x w" . elfeed-summary))
