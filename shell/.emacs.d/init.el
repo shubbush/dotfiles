@@ -20,7 +20,10 @@
         evil-want-C-i-jump nil
         evil-respect-visual-line-mode t)
   :config
-  (evil-mode t))
+  (evil-mode t)
+  (evil-define-key 'motion org-agenda-mode-map
+     "j" 'org-agenda-next-line
+     "k" 'org-agenda-previous-line))
 
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode)
@@ -32,7 +35,7 @@
 (global-auto-revert-mode)
 
 (add-to-list 'default-frame-alist
-	     '(font . "monospace-12:width=expanded"))
+	     '(font . "IBM Plex Mono-12:style=Text"))
 
 ;; follow symlinks
 (setq vc-follow-symlinks t)
@@ -68,7 +71,10 @@
       org-startup-with-inline-images t
       org-hide-leading-start t
       org-ellipsis "⬎"
-      org-agenda-files '("~/todo" "~/todo/edu" ))
+      org-agenda-files '("~/todo")
+      org-refile-targets '((org-agenda-files :maxlevel . 1))
+      org-refile-use-outline-path 'file)
+
   (global-set-key (kbd "C-c a") #'org-agenda)
   (setq org-todo-keywords
       '((sequence "TODO" "|" "DONE" "CANCELED"))
@@ -91,8 +97,7 @@
 	 ((agenda ""
 	    ((org-agenda-span 90)
              (org-agenda-show-all-dates nil)
-	     (org-agenda-overriding-header "Upcoming")))))))
-  )
+	     (org-agenda-overriding-header "Upcoming"))))))))
 
 (custom-set-faces
  '(line-number ((t (:foreground "#babbbd" :background "#ffffff"))))
