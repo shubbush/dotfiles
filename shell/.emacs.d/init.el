@@ -20,10 +20,7 @@
         evil-want-C-i-jump nil
         evil-respect-visual-line-mode t)
   :config
-  (evil-mode t)
-  (evil-define-key 'motion org-agenda-mode-map
-     "j" 'org-agenda-next-line
-     "k" 'org-agenda-previous-line))
+  (evil-mode t))
 
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode)
@@ -73,7 +70,13 @@
       org-ellipsis "⬎"
       org-agenda-files '("~/todo")
       org-refile-targets '((org-agenda-files :maxlevel . 1))
-      org-refile-use-outline-path 'file)
+      org-refile-use-outline-path 'file
+      calendar-week-start-day 1)
+
+  (add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (local-set-key (kbd "j") 'org-agenda-next-line)
+	    (local-set-key (kbd "k") 'org-agenda-previous-line)))
 
   (global-set-key (kbd "C-c a") #'org-agenda)
   (setq org-todo-keywords
@@ -135,7 +138,9 @@
       '(("i" "Inbox"  entry (file org-default-notes-file)
          "* TODO %?" )
         ("p" "Pocket" entry (file "~/todo/pocket.org")
-         "* TODO %(org-cliplink-capture)")))
+         "* TODO %(org-cliplink-capture)")
+				("w" "Wolt" entry (file "~/todo/wolt.org")
+         "* TODO %?")))
 
 ;; elfeed
 (use-package elfeed
