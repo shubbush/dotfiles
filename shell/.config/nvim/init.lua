@@ -32,11 +32,14 @@ require('lualine').setup({
 })
 
 require'nvim-treesitter.configs'.setup {
- ensure_installed = { "lua" },
+ ensure_installed = { "lua", "c", "vim", "vimdoc", "query", "scala", "json" },
  highlight = {
    enable = true
  }
 }
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldlevelstart=99
 
 vim.cmd [[
 	augroup highlight_yank
