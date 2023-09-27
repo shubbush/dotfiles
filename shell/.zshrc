@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+autoload -Uz compinit
+compinit
+
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -79,6 +82,8 @@ alias df="df -h"           # -h prints human readable format
 alias grep="grep -i"       # -i ignore case
 
 eval "$(starship init zsh)"
+
+[ -f .zshrc_local ] && source .zshrc_local
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
