@@ -16,8 +16,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- GUI enhancements
 	'nvim-tree/nvim-web-devicons',
-  'nvim-lualine/lualine.nvim',
-  'nvim-treesitter/nvim-treesitter',
+	'nvim-lualine/lualine.nvim',
+	'nvim-treesitter/nvim-treesitter',
+	{
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
   
   -- Themes
   "projekt0n/github-nvim-theme",
@@ -36,6 +40,13 @@ require("lazy").setup({
 			}
 		end,
 		dependencies = { {'nvim-tree/nvim-web-devicons'}}
-  }
+  },
+	{
+		'nvim-orgmode/orgmode',
+		dependencies = {
+			{ 'nvim-treesitter/nvim-treesitter', lazy = true },
+		}
+	},
+	'dhruvasagar/vim-table-mode'
 
 })

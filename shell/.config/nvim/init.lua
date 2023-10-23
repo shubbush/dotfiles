@@ -14,7 +14,7 @@ require('github-theme').setup({
     },
 		darken = {
       sidebars = {
-        enabled = false,
+        enabled = true,
         list = {},             -- Apply dark background to specific windows
       },
     }
@@ -31,15 +31,20 @@ require('lualine').setup({
 	}
 })
 
-require'nvim-treesitter.configs'.setup {
- ensure_installed = { "lua", "c", "vim", "vimdoc", "query", "scala", "json" },
- highlight = {
-   enable = true
- }
-}
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.o.foldlevelstart=99
+-- Load treesitter grammar for org
+require('orgmode').setup_ts_grammar()
+
+
+-- Setup orgmode
+require('orgmode').setup({
+	org_agenda_files = '~/todo/*',
+	org_todo_keywords = { "TODO(t)", "|", "DONE", "CANCELED" },
+	org_todo_keyword_faces = {
+			TODO = ':foreground #00605f :weight semi-bold', 
+			DONE = ':foreground #000000'
+	},
+	org_ellipsis = '⬎'
+})
 
 vim.cmd [[
 	augroup highlight_yank
