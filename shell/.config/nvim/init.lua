@@ -46,6 +46,8 @@ require('orgmode').setup({
 	org_ellipsis = '⬎'
 })
 
+require('gitsigns').setup()
+
 vim.cmd [[
 	augroup highlight_yank
 	    autocmd!
