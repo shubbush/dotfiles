@@ -2,6 +2,9 @@ require("options")
 require("keybindings")
 require("plugins")
 
+-- disable netrw at the very start of your init.lua. use nvim-tree instead
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Theme
 vim.o.termguicolors = true
@@ -24,10 +27,13 @@ vim.cmd'colorscheme github_light'
 
 require('lualine').setup({
   options = {
-		icons_enabled = false,
+		icons_enabled = true,
     theme = 'onelight',
 		component_separators = { left = '|', right = '|'},
     section_separators = { left = '', right = ''},
+	},
+	sections = {
+    lualine_y =  {'g:metals_status'}
 	}
 })
 
@@ -54,3 +60,5 @@ vim.cmd [[
  	    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=500 }
 	augroup END
 ]]
+
+

@@ -15,4 +15,6 @@ telescope.setup {
 	}
 }
 
-telescope.load_extension "file_browser"
+
+-- LSP
+vim.keymap.set("n", "gws", require("telescope.builtin").lsp_dynamic_workspace_symbols)

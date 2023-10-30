@@ -23,13 +23,31 @@ require("lazy").setup({
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		}
 	},
 	-- Git
 	'tpope/vim-fugitive',
 	'lewis6991/gitsigns.nvim',
-  
+
+	--LSP
+  { 'hrsh7th/nvim-cmp', 
+	  dependencies = { 
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-vsnip",
+			"hrsh7th/vim-vsnip",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
+  	} 
+  },
+	{ 'scalameta/nvim-metals',
+	  dependencies = {  "nvim-lua/plenary.nvim",
+      "mfussenegger/nvim-dap"} 
+	}, 
+
   -- Themes
   "projekt0n/github-nvim-theme",
 
