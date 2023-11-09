@@ -3,11 +3,10 @@
 
 #Fonts
 font:
-  use_thin_strokes: false
   size: 13.0
   normal:
     family: monospace
-    style: Regular
+    style: Text
   bold:
     family: monospace
     style: Bold
