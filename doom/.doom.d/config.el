@@ -127,6 +127,9 @@
 
 (add-function :after after-focus-change-function (lambda () (save-some-buffers t)))
 
+
+(setq confirm-kill-emacs nil)
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
