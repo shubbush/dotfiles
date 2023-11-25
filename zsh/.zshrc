@@ -1,8 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+fpath=( ~/.zfuncs "${fpath[@]}" )
 
 autoload -Uz compinit
-compinit
+compinit -i
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -83,7 +84,7 @@ alias grep="grep -i"       # -i ignore case
 
 eval "$(starship init zsh)"
 
-[ -f .zshrc_local ] && source .zshrc_local
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
 # nnn config
 n ()
