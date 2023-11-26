@@ -163,4 +163,7 @@
 ;; they are implemented.
 
 ;; local overrides
-(load-file "~/.doom.d/config-local.el")
+(let ((personal-settings "~/.doom.d/config-local.el"))
+ (when (file-exists-p personal-settings)
+   (load-file personal-settings))
+)
