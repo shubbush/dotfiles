@@ -61,4 +61,4 @@ vim.cmd [[
 	augroup END
 ]]
 
-
+vim.filetype.add( { extension = { hurl = 'hurl' } })

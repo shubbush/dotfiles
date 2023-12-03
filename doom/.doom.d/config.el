@@ -168,3 +168,28 @@
  (when (file-exists-p personal-settings)
    (load-file personal-settings))
 )
+
+;; Fixes org-capture after opening agenda
+;; See https://github.com/doomemacs/doomemacs/issues/5714
+(after! org
+  (defadvice! dan/org-capture-prevent-restart (fn &rest args)
+    :around #'+org--restart-mode-h
+    (unless (bound-and-true-p org-capture-mode)
+      (apply fn args)))
+  (add-hook! 'org-capture-after-finalize-hook
+             (let ((buffer (org-capture-get :buffer)))
+               (when (buffer-live-p buffer)
+                 (with-current-buffer buffer
+                   (+org--restart-mode-h))))))
+
+
+;; preserve structure when archiving
+(defadvice org-archive-subtree (around my-org-archive-subtree activate)
+  (let ((org-archive-location
+         (if (save-excursion (org-back-to-heading)
+                             (> (org-outline-level) 1))
+             (concat (car (split-string org-archive-location "::"))
+                     "::* "
+                     (car (org-get-outline-path)))
+           org-archive-location)))
+    ad-do-it))
