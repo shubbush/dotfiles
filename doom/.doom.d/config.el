@@ -50,8 +50,9 @@
    org-adapt-indentation t
    org-log-done 'time
    org-ellipsis "⬎"
-   org-refile-targets '((org-agenda-files :maxlevel . 1))
+   org-refile-targets '((org-agenda-files :tag . "project"))
    org-refile-use-outline-path 'file
+   org-outline-path-complete-in-steps nil
    calendar-week-start-day 1
   org-default-notes-file "~/todo/inbox.org"
    org-todo-keywords '((sequence "TODO" "|" "DONE" "CANCELED")))
@@ -180,7 +181,13 @@
              (let ((buffer (org-capture-get :buffer)))
                (when (buffer-live-p buffer)
                  (with-current-buffer buffer
-                   (+org--restart-mode-h))))))
+                   (+org--restart-mode-h)))))
+  (map! :leader
+      "a" #'org-agenda
+      "o ," #'org-switchb
+      "o /" #'consult-org-agenda
+      "o r" #'org-refile))
+
 
 
 ;; preserve structure when archiving
