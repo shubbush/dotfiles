@@ -59,6 +59,8 @@
   (setq org-capture-templates
         '(("i" "Inbox"  entry (file org-default-notes-file)
            "* TODO %?" )
+          ("w" "Work"  entry (file "~/todo/work.org")
+           "* TODO %?" )
           ("p" "Pocket" entry (file "~/todo/pocket.org")
            "* TODO %(org-cliplink-capture)"))))
 
@@ -76,21 +78,49 @@
                  (org-agenda-skip-entry-if 'deadline 'scheduled 'todo 'done)))
               (org-agenda-overriding-header "Inbox")
               ))))
+     ("s" "Super Today"
+      ((agenda "" ((org-agenda-overriding-header "")
+                   (org-agenda-span 'day)
+                   (org-super-agenda-groups
+                    '((:name "Today"
+                       :time-grid t
+                       :date today
+                       :not (:tag "work"))
+                      (:name "Work"
+                       :time-grid t
+                       :date today
+                       :tag "work")
+                      ))))
+       (tags "inbox"
+             ((org-agenda-skip-function
+               (lambda nil
+                 (org-agenda-skip-entry-if 'deadline 'scheduled 'todo 'done)))
+              (org-agenda-overriding-header "Inbox")
+              ))
+       ))
      ("u" "Upcoming"
       ((agenda ""
                ((org-agenda-span 90)
                 (org-agenda-show-all-dates nil)
-                (org-agenda-overriding-header "Upcoming")))))))
-  )
+                (org-agenda-overriding-header "Upcoming"))))))))
 
+(map! :after evil-org-agenda
+      :map evil-org-agenda-mode-map
+      :leader
+      "o r" #'org-refile ;; doesn't work
+      "o s" #'org-save-all-org-buffers)
 
+(map! :after org-super-agenda
+      :map org-super-agenda-header-map
+      "j" #'org-agenda-next-line
+      "k" #'org-agenda-previous-line)
 
-
-(setq initial-frame-alist '((top . 1) (left . 1) (width . 90) (height . 35)))
+(setq initial-frame-alist '((top . 10) (left . 10) (width . 90) (height . 35)))
 
 (defun emacs-startup-screen ()
   "Display the today org-agenda."
-  (org-agenda nil "c"))
+  (org-super-agenda-mode)
+  (org-agenda nil "s"))
 (add-hook 'emacs-startup-hook #'emacs-startup-screen)
 
 (after! projectile
@@ -184,6 +214,7 @@
                    (+org--restart-mode-h)))))
   (map! :leader
       "a" #'org-agenda
+      "o x" #'org-capture
       "o ," #'org-switchb
       "o /" #'consult-org-agenda
       "o r" #'org-refile))

@@ -52,3 +52,4 @@
 (package! doom-nano-modeline
   :recipe (:host github
   :repo "ronisbr/doom-nano-modeline"))
+(package! org-super-agenda)
