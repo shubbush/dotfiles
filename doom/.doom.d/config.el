@@ -68,27 +68,16 @@
   (setq
    org-agenda-start-day "+0d"
    org-agenda-custom-commands
-   '(("c" "Today"
-      ((agenda ""
-               ((org-agenda-span 'day)
-                (org-agenda-overriding-header "Today")))
-       (tags "inbox"
-             ((org-agenda-skip-function
-               (lambda nil
-                 (org-agenda-skip-entry-if 'deadline 'scheduled 'todo 'done)))
-              (org-agenda-overriding-header "Inbox")
-              ))))
-     ("s" "Super Today"
+   '(("s" "Super Today"
       ((agenda "" ((org-agenda-overriding-header "")
                    (org-agenda-span 'day)
                    (org-super-agenda-groups
-                    '((:name "Today"
+                    '(
+                      (:name "Today"
                        :time-grid t
-                       :date today
                        :not (:tag "work"))
                       (:name "Work"
                        :time-grid t
-                       :date today
                        :tag "work")
                       ))))
        (tags "inbox"
