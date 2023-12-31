@@ -72,6 +72,7 @@ require("lazy").setup({
 			{ 'nvim-treesitter/nvim-treesitter', lazy = true },
 		}
 	},
-	'dhruvasagar/vim-table-mode'
+	'dhruvasagar/vim-table-mode',
+	'NvChad/nvim-colorizer.lua'
 
 })

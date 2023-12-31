@@ -61,4 +61,6 @@ vim.cmd [[
 	augroup END
 ]]
 
+require('colorizer').setup()
+
 vim.filetype.add( { extension = { hurl = 'hurl' } })
