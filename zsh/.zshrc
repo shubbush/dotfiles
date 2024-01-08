@@ -74,6 +74,7 @@ export NVM_DIR="$HOME/.nvm"
 alias dc=cd
 alias v=nvim
 alias docker=podman
+alias notes="v ~/notes/"
 export EDITOR=nvim
 
 # Overwrite existing commands for better defaults

@@ -1,9 +1,9 @@
 local api = vim.api
 
 -- LSP mappings
-vim.keymap.set("n", "<leader>ws", function()
-  require("metals").hover_worksheet()
-end)
+--vim.keymap.set("n", "<leader>ws", function()
+--  require("metals").hover_worksheet()
+--end)
 
 
 ----------------------------------

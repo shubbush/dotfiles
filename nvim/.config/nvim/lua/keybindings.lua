@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
+vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc= 'Save buffer'})
 
 -- Jump to start and end of line using the home row keys
 vim.keymap.set('', 'H', '^')

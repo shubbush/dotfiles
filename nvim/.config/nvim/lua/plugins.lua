@@ -35,6 +35,20 @@ require("lazy").setup({
 	'lewis6991/gitsigns.nvim',
 
 	--LSP
+	{'williamboman/mason.nvim'},
+  {'williamboman/mason-lspconfig.nvim'},
+	{
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    lazy = true,
+    config = false,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      {'hrsh7th/cmp-nvim-lsp'},
+    }
+  },
   { 'hrsh7th/nvim-cmp', 
 	  dependencies = { 
 			"hrsh7th/cmp-nvim-lsp",
@@ -73,6 +87,13 @@ require("lazy").setup({
 		}
 	},
 	'dhruvasagar/vim-table-mode',
-	'NvChad/nvim-colorizer.lua'
-
+	'preservim/vim-markdown',
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end
+	}
 })
