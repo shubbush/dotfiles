@@ -48,7 +48,7 @@ require('orgmode').setup({
 	org_agenda_files = '~/todo/*',
 	org_todo_keywords = { "TODO(t)", "|", "DONE", "CANCELED" },
 	org_todo_keyword_faces = {
-			TODO = ':foreground #00605f :weight semi-bold', 
+			TODO = ':foreground #00605f :weight semi-bold',
 			DONE = ':foreground #000000'
 	},
 	org_ellipsis = '⬎'

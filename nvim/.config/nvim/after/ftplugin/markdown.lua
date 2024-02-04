@@ -14,3 +14,4 @@ vim.keymap.set('n', 'H', 'g^', { buffer = true })
 vim.keymap.set('n', 'L', 'g$', { buffer = true })
 
 vim.o.cursorlineopt = 'screenline'
+vim.opt.conceallevel = 0

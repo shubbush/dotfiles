@@ -19,10 +19,11 @@
   "nvim-web-devicons": { "branch": "master", "commit": "ecdeb4e2a4af34fc873bbfbf1f4c4e447e632255" },
   "orgmode": { "branch": "master", "commit": "983fc95d34a492edffdb1a5b7df9d31ffc5e9523" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+  "tabular": { "branch": "master", "commit": "339091ac4dd1f17e225fe7d57b48aff55f99b23a" },
   "telescope.nvim": { "branch": "master", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" },
   "vim-fugitive": { "branch": "master", "commit": "cbe9dfa162c178946afa689dd3f42d4ea8bf89c1" },
   "vim-markdown": { "branch": "master", "commit": "46add6c3017d3e4035dc10ffa9cb54221d8dfe1a" },
-  "vim-table-mode": { "branch": "master", "commit": "9555a3e6e5bcf285ec181b7fc983eea90500feb4" },
+  "vim-table-mode": { "branch": "master", "commit": "4ff8de2ac93431ee6d85a9e04177012752e6abdc" },
   "vim-vsnip": { "branch": "master", "commit": "be277461265f1e5c7db470aa479f30956597ea9e" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }

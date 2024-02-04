@@ -39,7 +39,6 @@ vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
 
 vim.opt.updatetime = 50
-vim.opt.conceallevel = 2
 
 -- Complete
 vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }

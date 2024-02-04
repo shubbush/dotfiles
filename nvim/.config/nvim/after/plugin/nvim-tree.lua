@@ -4,7 +4,7 @@ local WIDTH_RATIO = 0.5   -- You can change this too
 require('nvim-tree').setup({
   view = {
     float = {
-      enable = true,
+      enable = true, -- crashes when used with telescope when directory is opened
       open_win_config = function()
         local screen_w = vim.opt.columns:get()
         local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
