@@ -5,8 +5,8 @@ require("autocmds")
 require("commands")
 
 -- disable netrw at the very start of your init.lua. use nvim-tree instead
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- Theme
 vim.o.termguicolors = true
@@ -27,32 +27,6 @@ require('github-theme').setup({
 })
 vim.cmd'colorscheme github_light'
 
-require('lualine').setup({
-  options = {
-		icons_enabled = true,
-    theme = 'onelight',
-		component_separators = { left = '|', right = '|'},
-    section_separators = { left = '', right = ''},
-	},
-	sections = {
-    lualine_y =  {'g:metals_status'}
-	}
-})
-
--- Load treesitter grammar for org
-require('orgmode').setup_ts_grammar()
-
-
--- Setup orgmode
-require('orgmode').setup({
-	org_agenda_files = '~/todo/*',
-	org_todo_keywords = { "TODO(t)", "|", "DONE", "CANCELED" },
-	org_todo_keyword_faces = {
-			TODO = ':foreground #00605f :weight semi-bold',
-			DONE = ':foreground #000000'
-	},
-	org_ellipsis = '⬎'
-})
 
 require('gitsigns').setup()
 

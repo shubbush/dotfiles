@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- GUI enhancements
+	'tpope/vim-vinegar',
 	'nvim-tree/nvim-web-devicons',
 	'nvim-lualine/lualine.nvim',
 	'nvim-treesitter/nvim-treesitter',
@@ -31,9 +32,22 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons",
 		}
 	},
+	{
+		"antosha417/nvim-lsp-file-operations",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-tree.lua",
+		},
+		config = function()
+			require("lsp-file-operations").setup {
+				debug = true
+			}
+		end,
+	},
 	-- Git
 	'tpope/vim-fugitive',
 	'lewis6991/gitsigns.nvim',
+	'tpope/vim-rhubarb',
 
 	--LSP
 	{ 'williamboman/mason.nvim' },
@@ -85,14 +99,11 @@ require("lazy").setup({
 		dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 	},
 	{
-		'nvim-orgmode/orgmode',
-		dependencies = {
-			{ 'godlygeek/tabular', lazy = true },
-		}
-	},
-	{
 		'dhruvasagar/vim-table-mode',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			{ 'godlygeek/tabular', lazy = true }
+		},
 	},
 	'preservim/vim-markdown',
 	{
