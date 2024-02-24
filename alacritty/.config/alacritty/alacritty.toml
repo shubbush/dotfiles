@@ -1,4 +1,4 @@
-import = ["/home/shubbush/.config/alacritty/alacritty-local.toml"]
+import = ["~/.config/alacritty/alacritty-local.toml"]
 
 [colors]
 draw_bold_text_with_bright_colors = false
