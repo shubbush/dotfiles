@@ -16,6 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- GUI enhancements
 	'tpope/vim-vinegar',
+  'tpope/vim-unimpaired',
+	'romainl/vim-qf',
 	'nvim-tree/nvim-web-devicons',
 	'nvim-lualine/lualine.nvim',
 	'nvim-treesitter/nvim-treesitter',

@@ -1,3 +1,5 @@
+local home_dir = os.getenv("HOME")
+
 vim.opt.clipboard = "unnamedplus"
 
 -- UI
@@ -11,7 +13,10 @@ vim.opt.cursorline = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.termguicolors = true
+
+-- Spellcheck
 vim.opt.spell = true
+vim.opt.spellfile = home_dir .. "/.spellfile.utf-8.add"
 
 -- Search
 vim.opt.hlsearch=true

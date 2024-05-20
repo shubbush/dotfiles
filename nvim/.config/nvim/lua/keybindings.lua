@@ -76,6 +76,9 @@ end)
 -- buffer diagnostics only
 vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist)
 
+-- current line diagnostics only
+vim.keymap.set("n", "<leader>e", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>')
+
 vim.keymap.set("n", "[c", function()
   vim.diagnostic.goto_prev({ wrap = false })
 end)
