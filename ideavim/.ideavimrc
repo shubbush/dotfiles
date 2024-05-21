@@ -8,7 +8,7 @@
 
 " Enable easymotion plugin
 Plug 'easymotion/vim-easymotion'
-let mapleader=","
+let mapleader=" "
 set easymotion
 
 Plug 'tpope/vim-surround'
