@@ -30,6 +30,13 @@ vim.keymap.set('v', "<leader>d", "\"_d")
 
 vim.keymap.set('n', "Q", "<nop>")
 
+-- Toggle zen mode
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>zm",
+  ":ZenMode<CR>",
+  { noremap = true }
+)
 
 -- Telescope file browser
 vim.api.nvim_set_keymap(
