@@ -8,6 +8,9 @@ vim.keymap.set('n', '<leader>fG', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+-- extensions
+telescope.load_extension("emoji")
+
 -- Clone the default Telescope configuration
 local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
 

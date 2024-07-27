@@ -15,15 +15,16 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- GUI enhancements
-	{ 'folke/zen-mode.nvim',
-    opts = { 
+	{
+		'folke/zen-mode.nvim',
+		opts = {
 			window = {
-			  width = 0.75,
+				width = 0.75,
 			},
 		}
-  },
+	},
 	'tpope/vim-vinegar',
-  'tpope/vim-unimpaired',
+	'tpope/vim-unimpaired',
 	'romainl/vim-qf',
 	'nvim-tree/nvim-web-devicons',
 	'nvim-lualine/lualine.nvim',
@@ -123,5 +124,6 @@ require("lazy").setup({
 			vim.o.timeoutlen = 300
 		end
 	},
-	"github/copilot.vim"
+	"github/copilot.vim",
+	"xiyaowong/telescope-emoji.nvim"
 })

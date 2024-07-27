@@ -22,7 +22,7 @@ export PATH="$PATH:$GOPATH/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 
 # Directory contains tmux-256color terminfo
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
