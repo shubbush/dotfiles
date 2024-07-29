@@ -91,6 +91,8 @@ require("lazy").setup({
 
 	-- Themes
 	"projekt0n/github-nvim-theme",
+	"rose-pine/neovim",
+	"MeanderingProgrammer/markdown.nvim",
 
 	{
 		'glepnir/dashboard-nvim',
