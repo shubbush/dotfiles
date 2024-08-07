@@ -12,20 +12,20 @@ require("commands")
 vim.o.termguicolors = true
 -- vim.cmd.colorscheme('github_light')
 require('github-theme').setup({
-  options = {
-    styles = {
-      terminal_colors = true,
-      comments = 'italic',
-    },
+	options = {
+		styles = {
+			terminal_colors = true,
+			comments = 'italic',
+		},
 		darken = {
-      sidebars = {
-        enabled = true,
-        list = {},             -- Apply dark background to specific windows
-      },
-    }
-  }
+			sidebars = {
+				enable = true,
+				list = {}, -- Apply dark background to specific windows
+			},
+		}
+	}
 })
-vim.cmd'colorscheme github_light'
+vim.cmd 'colorscheme github_light'
 
 
 require('gitsigns').setup()
@@ -37,4 +37,4 @@ vim.cmd [[
 	augroup END
 ]]
 
-vim.filetype.add( { extension = { hurl = 'hurl' } })
+vim.filetype.add({ extension = { hurl = 'hurl' } })

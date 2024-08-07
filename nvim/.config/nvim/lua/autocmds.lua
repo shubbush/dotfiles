@@ -19,3 +19,20 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 	group = formatOnSave,
 	command = 'lua vim.lsp.buf.format()'
 })
+
+
+-- when directory is opened set it as the current working directory
+function SetWorkingDir()
+	local path = vim.fn.argv(0)
+	print('Checking if directory is opened: ' .. path)
+	if vim.fn.isdirectory(path) == 1 then
+		vim.fn.chdir(path)
+	end
+end
+
+local setWorkingDir = vim.api.nvim_create_augroup('setworkingdir', { clear = true })
+vim.api.nvim_create_autocmd({ 'VimEnter' }, {
+	pattern = '*',
+	group = setWorkingDir,
+	command = 'lua SetWorkingDir()'
+})
