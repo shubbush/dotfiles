@@ -15,14 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- GUI enhancements
-	{
-		'folke/zen-mode.nvim',
-		opts = {
-			window = {
-				width = 0.75,
-			},
-		}
-	},
+	'folke/zen-mode.nvim',
 	'tpope/vim-vinegar',
 	'tpope/vim-unimpaired',
 	'romainl/vim-qf',

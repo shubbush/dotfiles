@@ -17,6 +17,7 @@ vim.opt.termguicolors = true
 -- Spellcheck
 vim.opt.spell = true
 vim.opt.spellfile = home_dir .. "/.spellfile.utf-8.add"
+vim.opt.spelllang = { "en_us", "de_de", "ru" }
 
 -- Search
 vim.opt.hlsearch = true

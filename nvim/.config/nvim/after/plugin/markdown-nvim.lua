@@ -11,6 +11,7 @@ require("render-markdown").setup({
 		-- Replaces '>' of 'block_quote'
 		icon = '┃',
 		-- Highlight for the quote icon
+		repeat_linebreak = true,
 		highlight = '@MdQuoteHighlight',
 	},
 })
