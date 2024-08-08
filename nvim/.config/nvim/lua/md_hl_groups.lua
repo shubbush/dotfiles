@@ -1,0 +1,8 @@
+print("Loading custom hl-groups for Markdown")
+vim.api.nvim_set_hl(0, "@MdHeaderMarker", { fg = '#A4A4A4', bold = true, nocombine = true })
+vim.api.nvim_set_hl(0, "@MdHeaderContent", { fg = 'black', bold = true, nocombine = true })
+vim.api.nvim_set_hl(0, "@MdListItemMarker", { fg = '#A4A4A4' })
+vim.api.nvim_set_hl(0, "@MdQuoteHighlight", { fg = '#A4A4A4' })
+vim.api.nvim_set_hl(0, "@MdBlockQuote", { fg = '#3b3b3b' })
+vim.api.nvim_set_hl(0, "@MdLinkText", { fg = '#2980CC' })
+vim.api.nvim_set_hl(0, "@MdLink", { fg = '#A4A4A4', nocombine = true })

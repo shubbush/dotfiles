@@ -17,7 +17,8 @@ setopt INC_APPEND_HISTORY
 
 #Go
 export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
+export DENO_INSTALL="/home/shubbush/.deno"
+export PATH="$PATH:$GOPATH/bin:$DENO_INSTALL/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

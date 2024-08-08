@@ -1,3 +1,4 @@
+require("md_hl_groups")
 require("options")
 require("keybindings")
 require("plugins")
