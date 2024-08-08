@@ -14,6 +14,9 @@ require("render-markdown").setup({
 		repeat_linebreak = true,
 		highlight = '@MdQuoteHighlight',
 	},
+	bullet = {
+		highlight = '@MdRenderListBullet'
+	}
 })
 
 require('render-markdown').enable()
