@@ -9,6 +9,7 @@
 
 ; Block quote
 (block_quote) @MdBlockQuote
+(block_quote_marker) @MdBlockQuoteMarker
 
 ; Links
 ; (inline (inline_link (link_text) @MdLinkText))
