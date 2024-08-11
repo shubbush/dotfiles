@@ -1,14 +1,14 @@
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc= 'Save buffer'})
+vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', { desc = 'Save buffer' })
 
 -- Jump to start and end of line using the home row keys
 vim.keymap.set('', 'H', '^')
 vim.keymap.set('', 'L', '$')
 
-vim.keymap.set('n', '*', '*zz', {desc = 'Search and center screen'})
+vim.keymap.set('n', '*', '*zz', { desc = 'Search and center screen' })
 
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", {desc = 'Move hl line down'})
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", {desc = 'Move hl line up'})
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move hl line down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move hl line up' })
 
 -- Keep cursor in the middle while scrolling up and down
 vim.keymap.set('n', "<C-d>", "<C-d>zz")
@@ -30,33 +30,21 @@ vim.keymap.set('v', "<leader>d", "\"_d")
 
 vim.keymap.set('n', "Q", "<nop>")
 
+-- Switch buffers with arrows
+vim.keymap.set('n', "<Left>", "<cmd>bp<CR>")
+vim.keymap.set('n', "<Right>", "<cmd>bn<CR>")
+
 -- Toggle zen mode
 vim.api.nvim_set_keymap(
-  "n",
-  "<leader>zm",
-  ":ZenMode<CR>",
-  { noremap = true }
-)
-
--- Telescope file browser
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ft",
-  ":Telescope file_browser<CR>",
-  { noremap = true }
-)
-
--- open file_browser with the path of the current buffer
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fc",
-  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-  { noremap = true }
+	"n",
+	"<leader>zm",
+	":ZenMode<CR>",
+	{ noremap = true }
 )
 
 -- LSP
-vim.keymap.set("n", "gD",  vim.lsp.buf.definition)
-vim.keymap.set("n", "K",  vim.lsp.buf.hover)
+vim.keymap.set("n", "gD", vim.lsp.buf.definition)
+vim.keymap.set("n", "K", vim.lsp.buf.hover)
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
 vim.keymap.set("n", "gr", vim.lsp.buf.references)
 vim.keymap.set("n", "gds", vim.lsp.buf.document_symbol)
@@ -72,12 +60,12 @@ vim.keymap.set("n", "<leader>aa", vim.diagnostic.setqflist)
 
 -- all workspace errors
 vim.keymap.set("n", "<leader>ae", function()
-  vim.diagnostic.setqflist({ severity = "E" })
+	vim.diagnostic.setqflist({ severity = "E" })
 end)
 
 -- all workspace warnings
 vim.keymap.set("n", "<leader>aw", function()
-  vim.diagnostic.setqflist({ severity = "W" })
+	vim.diagnostic.setqflist({ severity = "W" })
 end)
 
 -- buffer diagnostics only
@@ -87,9 +75,9 @@ vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist)
 vim.keymap.set("n", "<leader>e", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>')
 
 vim.keymap.set("n", "[c", function()
-  vim.diagnostic.goto_prev({ wrap = false })
+	vim.diagnostic.goto_prev({ wrap = false })
 end)
 
 vim.keymap.set("n", "]c", function()
-  vim.diagnostic.goto_next({ wrap = false })
+	vim.diagnostic.goto_next({ wrap = false })
 end)

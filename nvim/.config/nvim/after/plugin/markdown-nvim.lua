@@ -16,6 +16,11 @@ require("render-markdown").setup({
 	},
 	bullet = {
 		highlight = '@MdRenderListBullet'
+	},
+	checkbox = {
+		checked = {
+			highlight = '@MdCheckboxChecked'
+		}
 	}
 })
 

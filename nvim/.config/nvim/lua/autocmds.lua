@@ -24,7 +24,6 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 -- when directory is opened set it as the current working directory
 function SetWorkingDir()
 	local path = vim.fn.argv(0)
-	print('Checking if directory is opened: ' .. path)
 	if vim.fn.isdirectory(path) == 1 then
 		vim.fn.chdir(path)
 	end

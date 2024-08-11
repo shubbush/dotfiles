@@ -2,11 +2,14 @@ local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 local telescopeConfig = require("telescope.config")
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fG', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>pb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+
+
+vim.keymap.set('n', '<leader>;', builtin.commands, {})
 
 -- extensions
 telescope.load_extension("emoji")
@@ -21,7 +24,7 @@ table.insert(vimgrep_arguments, "--glob")
 table.insert(vimgrep_arguments, "!**/.git/*")
 
 telescope.setup {
-  defaults = {
+	defaults = {
 		-- `hidden = true` is not supported in text grep commands.
 		vimgrep_arguments = vimgrep_arguments,
 	},
@@ -31,14 +34,7 @@ telescope.setup {
 			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
 		},
 	},
-	extensions = {
-		file_browser = {
-      theme = "ivy",
-			hijack_netrw = true
-		}
-	}
 }
-
 
 -- LSP
 vim.keymap.set("n", "gws", require("telescope.builtin").lsp_dynamic_workspace_symbols)

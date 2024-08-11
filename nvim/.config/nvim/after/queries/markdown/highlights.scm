@@ -6,6 +6,7 @@
 
 ; List item markers
 (list (list_item [(list_marker_dot) (list_marker_minus) (list_marker_star) (list_marker_plus)] @MdListItemMarker)) 
+(task_list_marker_checked) @MdCheckboxChecked
 
 ; Block quote
 (block_quote) @MdBlockQuote
