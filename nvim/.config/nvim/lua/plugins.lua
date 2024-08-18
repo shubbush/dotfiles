@@ -143,4 +143,5 @@ require("lazy").setup({
 	"github/copilot.vim",
 	"xiyaowong/telescope-emoji.nvim",
 	'tpope/vim-commentary',
+	'fei6409/log-highlight.nvim'
 })
