@@ -33,11 +33,19 @@ local conditions = {
 	end,
 }
 
+local win_bar_config = {
+	lualine_x = {
+		{ 'filetype', icon_only = true, padding = 0 },
+		{ 'filename', path = 1,         padding = { left = 0, right = 1 } }
+	}
+}
+
 -- Config
 local config = {
 	options = {
 		-- Disable sections and component separators
 		component_separators = '',
+		-- component_separators = { left = '|', right = '|' },
 		section_separators = '',
 		theme = {
 			-- We are going to use lualine_c an lualine_x as left and
@@ -67,12 +75,8 @@ local config = {
 		lualine_c = {},
 		lualine_x = {},
 	},
-	winbar = {
-		lualine_x = { { 'filename', path = 1 } }
-	},
-	inactive_winbar = {
-		lualine_x = { { 'filename', path = 1 } }
-	}
+	winbar = win_bar_config,
+	inactive_winbar = win_bar_config
 }
 
 -- Inserts a component in lualine_c at left section
@@ -121,6 +125,12 @@ ins_left {
 
 
 ins_left {
+	'filename',
+	cond = conditions.buffer_not_empty,
+	color = { fg = colors.fg, gui = 'bold' },
+}
+
+ins_left {
 	'diagnostics',
 	sources = { 'nvim_diagnostic' },
 	symbols = { error = ' ', warn = ' ', info = ' ' },
@@ -140,11 +150,6 @@ ins_left {
 }
 
 
-ins_left {
-	'filename',
-	cond = conditions.buffer_not_empty,
-	color = { fg = colors.fg, gui = 'bold' }, }
-
 -- Add components to right sections
 
 ins_right {
@@ -159,7 +164,7 @@ ins_right {
 	symbols = { added = ' ', modified = ' ', removed = ' ' },
 	diff_color = {
 		added = { fg = colors.green },
-		modified = { fg = colors.orange },
+		modified = { fg = colors.blue },
 		removed = { fg = colors.red },
 	},
 	cond = conditions.hide_in_width,
