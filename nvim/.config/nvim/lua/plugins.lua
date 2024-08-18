@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- GUI enhancements
+	'norcalli/nvim-colorizer.lua',
 	'folke/zen-mode.nvim',
 	'tpope/vim-vinegar',
 	'tpope/vim-unimpaired',
@@ -83,6 +84,14 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim",
 			"mfussenegger/nvim-dap" }
 	},
+	{
+		'mrcjkb/rustaceanvim',
+		version = '^5', -- Recommended
+		lazy = false, -- This plugin is already lazy
+		dependencies = {
+
+		}
+	},
 
 	-- Themes
 	"projekt0n/github-nvim-theme",
@@ -132,5 +141,6 @@ require("lazy").setup({
 		end
 	},
 	"github/copilot.vim",
-	"xiyaowong/telescope-emoji.nvim"
+	"xiyaowong/telescope-emoji.nvim",
+	'tpope/vim-commentary',
 })
