@@ -24,6 +24,12 @@ require("lazy").setup({
 	'nvim-lualine/lualine.nvim',
 	'nvim-treesitter/nvim-treesitter',
 	{
+		"j-hui/fidget.nvim",
+		opts = {
+			-- options
+		},
+	},
+	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.4',
 		dependencies = { 'nvim-lua/plenary.nvim' }

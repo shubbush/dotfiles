@@ -8,7 +8,6 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>pb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
-
 vim.keymap.set('n', '<leader>;', builtin.commands, {})
 
 -- extensions
@@ -37,4 +36,6 @@ telescope.setup {
 }
 
 -- LSP
-vim.keymap.set("n", "gws", require("telescope.builtin").lsp_dynamic_workspace_symbols)
+vim.keymap.set("n", "<leader>lsw", builtin.lsp_dynamic_workspace_symbols)
+vim.keymap.set("n", "<leader>lsd", builtin.lsp_document_symbols)
+vim.keymap.set("n", "<leader>ld", builtin.diagnostics)
