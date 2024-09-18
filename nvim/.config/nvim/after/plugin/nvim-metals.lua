@@ -14,7 +14,7 @@ local metals_config = require("metals").bare_config()
 -- Example of settings
 metals_config.settings = {
 	showImplicitArguments = false,
-	excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+	verboseCompilation = true,
 }
 metals_config.init_options.statusBarProvider = "off"
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()

@@ -13,11 +13,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 ---
 
+-- If you want icons for diagnostic errors, you'll need to define them somewhere:
+vim.fn.sign_define("DiagnosticSignError",
+	{ text = " ", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn",
+	{ text = " ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo",
+	{ text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint",
+	{ text = "󰌵", texthl = "DiagnosticSignHint" })
+
 require("lazy").setup({
 	-- GUI enhancements
 	'norcalli/nvim-colorizer.lua',
 	'folke/zen-mode.nvim',
-	'tpope/vim-vinegar',
+	--'tpope/vim-vinegar',
 	'tpope/vim-unimpaired',
 	'romainl/vim-qf',
 	'nvim-tree/nvim-web-devicons',
@@ -35,12 +45,43 @@ require("lazy").setup({
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
 		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		}
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+		init = function()
+			vim.api.nvim_create_autocmd('BufEnter', {
+				-- make a group to be able to delete it later
+				group = vim.api.nvim_create_augroup('NeoTreeInit', { clear = true }),
+				callback = function()
+					local f = vim.fn.expand('%:p')
+					if vim.fn.isdirectory(f) ~= 0 then
+						vim.cmd('Neotree current dir=' .. f)
+						-- neo-tree is loaded now, delete the init autocmd
+						vim.api.nvim_clear_autocmds { group = 'NeoTreeInit' }
+					end
+				end
+			})
+		end,
+		keys = {
+			{ "-", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
+		},
+		config = function()
+			require("neo-tree").setup({
+				close_if_last_window = false,
+				enable_git_status = true,
+				enable_diagnostics = true,
+				window = {
+					position = "current",
+				},
+				filesystem = {
+					hijack_netrw_behavior = "open_default",
+				},
+			})
+		end
 	},
 	{
 		"antosha417/nvim-lsp-file-operations",

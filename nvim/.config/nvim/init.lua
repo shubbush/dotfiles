@@ -6,8 +6,8 @@ require("autocmds")
 require("commands")
 
 -- disable netrw at the very start of your init.lua. use nvim-tree instead
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Theme
 vim.o.termguicolors = true
