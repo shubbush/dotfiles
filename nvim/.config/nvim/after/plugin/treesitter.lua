@@ -6,4 +6,4 @@ require 'nvim-treesitter.configs'.setup {
 	},
 }
 
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+-- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'

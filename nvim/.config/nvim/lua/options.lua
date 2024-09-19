@@ -36,9 +36,13 @@ vim.opt.expandtab = false
 
 
 -- Fold
-vim.o.foldmethod = "expr"
+vim.o.foldcolumn = '0'
+--vim.o.foldmethod = "expr"
+vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
-
+vim.o.foldtext = ""
+vim.o.foldenable = true
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- Scroll
 vim.o.scrolloff = 8
