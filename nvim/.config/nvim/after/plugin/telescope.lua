@@ -26,16 +26,20 @@ telescope.setup {
 	defaults = {
 		-- `hidden = true` is not supported in text grep commands.
 		vimgrep_arguments = vimgrep_arguments,
+		path_display = { "smart" },
 	},
 	pickers = {
 		find_files = {
 			-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
 			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
 		},
+		lsp_references = {
+			theme = "cursor",
+		},
 	},
 }
 
 -- LSP
-vim.keymap.set("n", "<leader>lsw", builtin.lsp_dynamic_workspace_symbols)
+vim.keymap.set("n", "<leader>P", builtin.lsp_dynamic_workspace_symbols)
 vim.keymap.set("n", "<leader>lsd", builtin.lsp_document_symbols)
 vim.keymap.set("n", "<leader>ld", builtin.diagnostics)

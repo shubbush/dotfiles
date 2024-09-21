@@ -11,7 +11,6 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Theme
 vim.o.termguicolors = true
--- vim.cmd.colorscheme('github_light')
 require('github-theme').setup({
 	options = {
 		styles = {
@@ -26,7 +25,7 @@ require('github-theme').setup({
 		}
 	}
 })
-vim.cmd 'colorscheme github_light'
+vim.cmd.colorscheme('github_light')
 
 
 require('gitsigns').setup()
