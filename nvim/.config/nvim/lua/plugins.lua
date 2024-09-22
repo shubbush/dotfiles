@@ -33,6 +33,7 @@ require("lazy").setup({
 	'nvim-tree/nvim-web-devicons',
 	'nvim-lualine/lualine.nvim',
 	'nvim-treesitter/nvim-treesitter',
+	'rktjmp/lush.nvim',
 	{
 		"j-hui/fidget.nvim",
 		opts = {
