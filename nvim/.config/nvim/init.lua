@@ -1,9 +1,10 @@
 require("md_hl_groups")
 require("options")
 require("keybindings")
-require("plugins")
+require("plugin_manager")
 require("autocmds")
-require("commands")
+require("notes")
+require("lsp")
 
 -- disable netrw at the very start of your init.lua. use nvim-tree instead
 vim.g.loaded_netrw = 1
