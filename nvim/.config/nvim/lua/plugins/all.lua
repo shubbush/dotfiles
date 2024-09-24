@@ -63,6 +63,15 @@ return {
 	},
 	--LSP
 	{
+    "williamboman/mason.nvim",
+		dependencies = {
+      'williamboman/mason-lspconfig.nvim',
+		},
+},
+{
+  'williamboman/mason-lspconfig.nvim',
+},
+	{
 		'mrcjkb/rustaceanvim',
 		version = '^5', -- Recommended
 		lazy = false, -- This plugin is already lazy

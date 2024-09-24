@@ -6,7 +6,7 @@ return {
 			'williamboman/mason-lspconfig.nvim',
 		},
 		branch = 'v3.x',
-		lazy = true,
+		lazy = false,
 		config = function()
 			local lsp_zero = require('lsp-zero')
 
@@ -22,6 +22,16 @@ return {
 					lsp_zero.default_setup,
 				},
 			})
+
+			require 'lspconfig'.nil_ls.setup {
+				settings = {
+					['nil'] = {
+						formatting = {
+							command = { "nixpkgs-fmt" },
+						},
+					},
+				},
+			}
 
 			lsp_zero.on_attach(function(client, bufnr)
 				local opts = { buffer = bufnr, remap = false }
