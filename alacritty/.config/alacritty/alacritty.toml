@@ -19,6 +19,7 @@ program = "/bin/zsh"
 
 [window]
 decorations = "full"
+dimensions = { columns = 100, lines = 25 }
 
 [window.padding]
 x = 6
