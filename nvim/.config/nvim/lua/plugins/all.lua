@@ -8,32 +8,6 @@ return {
 	'rktjmp/lush.nvim',
 	'j-hui/fidget.nvim',
 	{
-		'kevinhwang91/nvim-ufo',
-		dependencies = { 'kevinhwang91/promise-async' },
-		config = function()
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities.textDocument.foldingRange = {
-				dynamicRegistration = false,
-				lineFoldingOnly = true
-			}
-			-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
-			vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-			vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
-			local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'}
-			for _, ls in ipairs(language_servers) do
-				require('lspconfig')[ls].setup({
-					capabilities = capabilities
-					-- you can add other fields for setting up lsp server in this table
-				})
-			end
-			require('ufo').setup({
-				close_fold_kinds_for_ft = {
-					default = { 'imports' },
-				},
-			})
-		end,
-	},
-	{
 		"antosha417/nvim-lsp-file-operations",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -63,14 +37,14 @@ return {
 	},
 	--LSP
 	{
-    "williamboman/mason.nvim",
+		"williamboman/mason.nvim",
 		dependencies = {
-      'williamboman/mason-lspconfig.nvim',
+			'williamboman/mason-lspconfig.nvim',
 		},
-},
-{
-  'williamboman/mason-lspconfig.nvim',
-},
+	},
+	{
+		'williamboman/mason-lspconfig.nvim',
+	},
 	{
 		'mrcjkb/rustaceanvim',
 		version = '^5', -- Recommended
