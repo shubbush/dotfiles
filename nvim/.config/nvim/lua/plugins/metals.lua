@@ -1,8 +1,11 @@
+-- Metals
 return {
 	{
 		'scalameta/nvim-metals',
-		dependencies = { "nvim-lua/plenary.nvim",
-			"mfussenegger/nvim-dap"
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"mfussenegger/nvim-dap",
+			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
 			local api = vim.api
@@ -11,7 +14,6 @@ return {
 			--vim.keymap.set("n", "<leader>ws", function()
 			--  require("metals").hover_worksheet()
 			--end)
-
 
 			----------------------------------
 			-- LSP Setup ---------------------

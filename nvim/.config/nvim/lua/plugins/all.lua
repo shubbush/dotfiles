@@ -6,50 +6,10 @@ return {
 	'romainl/vim-qf',
 	'nvim-tree/nvim-web-devicons',
 	'rktjmp/lush.nvim',
-	'j-hui/fidget.nvim',
-	{
-		"antosha417/nvim-lsp-file-operations",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("lsp-file-operations").setup {
-				debug = true
-			}
-		end,
-	},
 	-- Git
-	'tpope/vim-fugitive',
-	'lewis6991/gitsigns.nvim',
+	{ 'tpope/vim-fugitive', enable = false },
 	'tpope/vim-rhubarb',
-	{
-		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-
-			-- Only one of these is needed.
-			--		"nvim-telescope/telescope.nvim", -- optional
-			--		"ibhagwan/fzf-lua",            -- optional
-			--		"echasnovski/mini.pick",       -- optional
-		},
-		config = true
-	},
-	--LSP
-	{
-		"williamboman/mason.nvim",
-		dependencies = {
-			'williamboman/mason-lspconfig.nvim',
-		},
-	},
-	{
-		'williamboman/mason-lspconfig.nvim',
-	},
-	{
-		'mrcjkb/rustaceanvim',
-		version = '^5', -- Recommended
-		lazy = false, -- This plugin is already lazy
-	},
+	'lewis6991/gitsigns.nvim',
 
 	-- Themes
 	"projekt0n/github-nvim-theme",
