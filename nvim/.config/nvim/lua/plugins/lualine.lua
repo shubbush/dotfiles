@@ -136,7 +136,7 @@ return {
 
 			ins_left {
 				'diagnostics',
-				sources = { 'nvim_diagnostic' },
+				sources = { 'nvim_workspace_diagnostic' },
 				symbols = { error = ' ', warn = ' ', info = ' ' },
 				diagnostics_color = {
 					error = { fg = colors.red },
