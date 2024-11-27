@@ -42,3 +42,13 @@ vim.api.nvim_create_autocmd({ 'VimEnter' }, {
 	group = setWorkingDir,
 	command = 'lua SetWorkingDir()'
 })
+
+
+-- disable spellcheck for certain filetypes
+
+local disableSpellcheck = vim.api.nvim_create_augroup('disableSpellcheck', { clear = true })
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+	pattern = 'yaml',
+	group = disableSpellcheck,
+	command = 'setlocal nospell'
+})

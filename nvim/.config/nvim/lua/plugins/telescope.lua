@@ -40,7 +40,12 @@ return {
 						find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
 					},
 					lsp_references = {
-						theme = "cursor",
+						layout_strategy = 'vertical',
+						layout_config = { width = 0.5 },
+					},
+					lsp_implementations = {
+						layout_strategy = 'vertical',
+						layout_config = { width = 0.5 },
 					},
 				},
 			}
@@ -49,6 +54,8 @@ return {
 			vim.keymap.set("n", "<leader>P", builtin.lsp_dynamic_workspace_symbols)
 			vim.keymap.set("n", "<leader>lsd", builtin.lsp_document_symbols)
 			vim.keymap.set("n", "<leader>ld", builtin.diagnostics)
+			vim.keymap.set("n", "gi", builtin.lsp_implementations)
+			vim.keymap.set("n", "gr", builtin.lsp_references)
 		end
 	}
 }

@@ -10,6 +10,7 @@ return {
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
 			'neovim/nvim-lspconfig',
+			'nvim-telescope/telescope.nvim',
 		},
 		config = setupLspZero,
 	},
@@ -33,4 +34,3 @@ return {
 --	version = '^5', -- Recommended
 --	lazy = false, -- This plugin is already lazy
 --},
-
