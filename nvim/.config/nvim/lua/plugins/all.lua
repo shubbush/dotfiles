@@ -3,7 +3,6 @@ return {
 	'norcalli/nvim-colorizer.lua',
 	--'tpope/vim-vinegar',
 	'tpope/vim-unimpaired',
-	'romainl/vim-qf',
 	'nvim-tree/nvim-web-devicons',
 	'rktjmp/lush.nvim',
 	-- Git
@@ -25,6 +24,5 @@ return {
 	},
 	"github/copilot.vim",
 	"xiyaowong/telescope-emoji.nvim",
-	'tpope/vim-commentary',
 	'fei6409/log-highlight.nvim',
 }
