@@ -6,11 +6,13 @@ return {
 			-- Author: shadmansaleh
 			-- Credit: glepnir
 			local lualine = require('lualine')
+			local navic = require('nvim-navic')
 
 			-- Color table for highlights
 			-- stylua: ignore
 			local colors = {
-				bg       = '#F3F5F7',
+				-- bg       = '#F3F5F7',
+				bg       = '#FFFFFF',
 				fg       = '#454545',
 				yellow   = '#f39c11',
 				cyan     = '#008080',
@@ -41,7 +43,17 @@ return {
 				lualine_x = {
 					{ 'filetype', icon_only = true, padding = 0 },
 					{ 'filename', path = 1,         padding = { left = 0, right = 1 } }
-				}
+				},
+				lualine_c = {
+					{
+						function()
+							return navic.get_location()
+						end,
+						cond = function()
+							return navic.is_available()
+						end
+					}
+				},
 			}
 
 			-- Config

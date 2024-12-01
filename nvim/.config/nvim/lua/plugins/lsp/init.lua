@@ -11,6 +11,7 @@ return {
 			'williamboman/mason-lspconfig.nvim',
 			'neovim/nvim-lspconfig',
 			'nvim-telescope/telescope.nvim',
+			'SmiteshP/nvim-navic',
 		},
 		config = setupLspZero,
 	},

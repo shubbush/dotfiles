@@ -34,15 +34,17 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = false
 
-
 -- Fold
 vim.o.foldcolumn = '0'
---vim.o.foldmethod = "expr"
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldtext = ""
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+vim.o.statuscolumn = "%!v:lua.get_statuscol()"
 
 -- Scroll
 vim.o.scrolloff = 8

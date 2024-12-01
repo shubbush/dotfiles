@@ -1,6 +1,7 @@
 function setupLspZero()
 	local lsp_zero = require('lsp-zero')
 	require('fidget').setup()
+	local navic = require("nvim-navic")
 
 	lsp_zero.on_attach(function(client, bufnr)
 		-- see :help lsp-zero-keybindings
@@ -54,17 +55,15 @@ function setupLspZero()
 	lsp_zero.on_attach(function(client, bufnr)
 		local opts = { buffer = bufnr, remap = false }
 		-- LSP
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = 'LSP: Go to defenition' })
 		vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
 		vim.keymap.set("n", "<leader>lcl", vim.lsp.codelens.run)
 		vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-		vim.keymap.set("n", "<leader>lca", vim.lsp.buf.code_action)
+		vim.keymap.set("n", "g.", vim.lsp.buf.code_action)
 		vim.keymap.set("n", "<leader>lrn", function() vim.lsp.buf.rename() end, opts)
-		vim.keymap.set("n", "<leader>ld", function() vim.diagnostic.open_float() end, opts)
-		-- vim.keymap.set("n", "<leader>lds", vim.lsp.buf.document_symbol)
 		vim.keymap.set("n", "<leader>lws", function() vim.lsp.buf.workspace_symbol() end, opts)
 
 		-- Diagnostics
@@ -94,5 +93,9 @@ function setupLspZero()
 		vim.keymap.set("n", "]d", function()
 			vim.diagnostic.goto_next({ wrap = false })
 		end)
+
+		if client.server_capabilities.documentSymbolProvider then
+			navic.attach(client, bufnr)
+		end
 	end)
 end

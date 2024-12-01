@@ -26,4 +26,5 @@ require("lazy").setup({
 	install = { colorscheme = { "github-light" } },
 	-- automatically check for plugin updates
 	checker = { enabled = false },
+	change_detection = { enabled = false },
 })

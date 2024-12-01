@@ -13,6 +13,6 @@ return {
 		keys = {
 			{ "<leader>gs", "<cmd>Neogit<cr>", desc = "Open Neogit status buffer" },
 		},
-		config = true
+		config = true,
 	},
 }
