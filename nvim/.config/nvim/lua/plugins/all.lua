@@ -25,4 +25,5 @@ return {
 	"github/copilot.vim",
 	"xiyaowong/telescope-emoji.nvim",
 	'fei6409/log-highlight.nvim',
+	"tpope/vim-surround",
 }
