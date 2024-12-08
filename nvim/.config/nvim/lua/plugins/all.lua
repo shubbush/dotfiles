@@ -6,7 +6,7 @@ return {
 	'nvim-tree/nvim-web-devicons',
 	'rktjmp/lush.nvim',
 	-- Git
-	{ 'tpope/vim-fugitive', enable = false },
+	-- { 'tpope/vim-fugitive', enable = true },
 	'tpope/vim-rhubarb',
 	'lewis6991/gitsigns.nvim',
 
