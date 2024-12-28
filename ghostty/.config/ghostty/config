@@ -1,0 +1,14 @@
+# Theme
+config-file = theme/config
+
+font-family = Plex Mono
+font-style = Text
+
+adjust-cell-width = 1
+adjust-cell-height = 3
+
+font-size = 13
+
+command = tmux attach || tmux
+
+bold-is-bright = true
