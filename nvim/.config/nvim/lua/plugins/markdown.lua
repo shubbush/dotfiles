@@ -19,7 +19,8 @@ return {
 					highlight = '@MdQuoteHighlight',
 				},
 				bullet = {
-					highlight = '@MdRenderListBullet'
+					highlight = '@MdRenderListBullet',
+					icons = { '', '', '', '' },
 				},
 				checkbox = {
 					checked = {

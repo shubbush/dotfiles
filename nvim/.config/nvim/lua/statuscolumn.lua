@@ -8,7 +8,7 @@ end
 
 _G.get_statuscol = function()
 	if vim.opt_local.signcolumn:get() == 'yes' then
-		return "%s%l%= " .. get_fold(vim.v.lnum) .. " "
+		return "%s%r%= " .. get_fold(vim.v.lnum) .. " "
 	else
 		return ""
 	end
