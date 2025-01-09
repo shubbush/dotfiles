@@ -88,11 +88,11 @@ function setupLspZero()
 
 		vim.keymap.set("n", "[d", function()
 			vim.diagnostic.goto_prev({ wrap = false })
-		end)
+		end, { desc = "Diagnostics next" })
 
 		vim.keymap.set("n", "]d", function()
 			vim.diagnostic.goto_next({ wrap = false })
-		end)
+		end, { desc = "Diagnostics prev" })
 
 		if client.server_capabilities.documentSymbolProvider then
 			navic.attach(client, bufnr)
