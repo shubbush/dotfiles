@@ -1,4 +1,3 @@
-require("md_hl_groups")
 require("options")
 require("keybindings")
 require("plugin_manager")
@@ -30,6 +29,8 @@ require('github-theme').setup({
 })
 vim.cmd.colorscheme('github_light')
 
+
+require("hl_groups")
 
 require('gitsigns').setup()
 
