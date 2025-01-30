@@ -26,4 +26,5 @@ return {
 	"xiyaowong/telescope-emoji.nvim",
 	'fei6409/log-highlight.nvim',
 	"tpope/vim-surround",
+	"RRethy/vim-illuminate",
 }
