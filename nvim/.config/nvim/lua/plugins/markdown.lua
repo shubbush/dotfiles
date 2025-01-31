@@ -26,6 +26,9 @@ return {
 					checked = {
 						highlight = '@MdCheckboxChecked'
 					}
+				},
+				pipe_table = {
+					enabled = false,
 				}
 			})
 
