@@ -4,6 +4,9 @@
 
 " Enable VimSneak plugin
 " set sneak
+"
+
+set clipboard=unnamedplus
 
 
 " Enable easymotion plugin
@@ -100,6 +103,8 @@ set mouse+=a
 " Jump to start and end of line using the home row keys
 map H ^
 map L $
+
+xnoremap <leader>p "_dP
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
