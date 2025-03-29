@@ -32,15 +32,16 @@ return {
 				enable_git_status = true,
 				enable_diagnostics = true,
 				window = {
-					position = "current",
+					position = "float",
 				},
 				filesystem = {
-					hijack_netrw_behavior = "open_default",
+					hijack_netrw_behavior = "open_current",
 					filtered_items = {
 						visible = true,
 						hide_dotfiles = false,
 					},
 				},
+
 			})
 		end
 	},
