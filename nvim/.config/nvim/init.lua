@@ -6,6 +6,7 @@ require("notes")
 require("lsp")
 require("statuscolumn")
 require("telescope-config")
+require("diagnostic")
 
 -- disable netrw at the very start of your init.lua. use nvim-tree instead
 vim.g.loaded_netrw = 1
