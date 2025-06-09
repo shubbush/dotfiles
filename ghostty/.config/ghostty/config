@@ -1,8 +1,7 @@
 # Theme
 config-file = theme/config
 
-font-family = Plex Mono
-font-style = Text
+font-family = TX-02
 
 adjust-cell-width = 1
 adjust-cell-height = 3
