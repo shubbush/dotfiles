@@ -7,12 +7,14 @@ compinit -i
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export LC_TIME=de_DE.UTF-8
 
 # History
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 setopt INC_APPEND_HISTORY
+unsetopt EXTENDED_HISTORY
 
 
 #Go
@@ -64,6 +66,10 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f  /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 # bindkey '^R' history-incremental-search-backward
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
 
 # 
 

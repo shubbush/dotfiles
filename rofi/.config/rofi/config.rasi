@@ -1,0 +1,9 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "Papirus";
+  font: "monospace 14";
+  modi: "drun";
+}
+@theme "adi_style2.rasi"
