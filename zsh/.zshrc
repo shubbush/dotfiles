@@ -82,7 +82,7 @@ alias dc=cd
 alias v=nvim
 alias docker=podman
 alias notes="v ~/notes/"
-alias ghpr="gh pr create --fill && gh pr view -w"
+alias ghpr="gh pr create --fill --draft && gh pr view -w"
 export EDITOR=nvim
 
 # Overwrite existing commands for better defaults
