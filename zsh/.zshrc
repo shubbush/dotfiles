@@ -65,6 +65,7 @@ export NVM_DIR="$HOME/.nvm"
 # bindkey -v
 
 [ -f  /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
+[ -f  /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 # bindkey '^R' history-incremental-search-backward
 if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"

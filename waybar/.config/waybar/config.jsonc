@@ -5,8 +5,8 @@
     "margin": "20 20 0 20",
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/language", "hyprland/submap"],
-    "modules-center": ["clock", "custom/weather"],
+    "modules-left": ["hyprland/workspaces", "hyprland/language",  "custom/pacman"],
+    "modules-center": ["clock", "custom/weather", "custom/update"],
     "modules-right": ["pulseaudio", "bluetooth", "network", "custom/mem", "cpu",   "tray", "custom/power"],
 
 
@@ -32,7 +32,7 @@
 
 		"custom/power": {
        "format": "󰐥",
-			 "on-click": "wlogout",
+			 "on-click": "omarchy-menu system",
        "tooltip": false,
 		},
 
@@ -73,7 +73,17 @@
         "return-type": "json"
     },
 
-    "pulseaudio": {
+  "custom/update": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 3600
+  },
+
+
+  "pulseaudio": {
         "reverse-scrolling": 1,
         "format": "{icon}  {format_source}",
         "format-muted": "   {format_source}",
@@ -88,7 +98,9 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol",
+        "on-click": "$TERMINAL --class=Wiremix -e wiremix",
+        "tooltip-format": "Playing at {volume}%",
+        "scroll-step": 5,
 				"on-click-middle": "pactl set-sink-mute 0 toggle",
 				"on-click-right": "pactl set-source-mute 0 toggle",
 				"tooltip-format": "{volume}%, {desc}"
@@ -98,7 +110,7 @@
 			"format": "",
 			"format-disabled": "󰂲",
 			"format-off": "󰂲",
-			"on-click": "blueman-manager",
+      "on-click": "blueberry",
 			"tooltip-format": "{device_enumerate}",
 "tooltip-format-enumerate-connected": "• {device_alias}"
 		},
@@ -110,7 +122,7 @@
 			"format-disconnected": "󰖪",
 			"format-linked": "linked",
 			"tooltip-format-wifi": "{essid} - {signalStrength}",
-			"on-click": "",
+    "on-click": "omarchy-launch-wifi"
 		},
 
     "custom/mem": {
@@ -158,5 +170,15 @@
     "tray": {
         "icon-size": 16,
         "spacing": 5
+    },
+
+ "custom/pacman": {
+        "format": "{} ",
+        "interval": 3600,                     			// every hour
+        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",	// # of updates
+        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
+        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8,
+        "tooltip": false,
     },
 }
