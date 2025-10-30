@@ -17,8 +17,8 @@ return {
 					}
 				}
 			})
-			vim.keymap.set('n', "<Left>", "<plug>(CybuLastusedPrev)")
-			vim.keymap.set('n', "<Right>", "<plug>(CybuLastusedNext)")
+			vim.keymap.set('n', "<Left>", "<plug>(CybuPrev)")
+			vim.keymap.set('n', "<Right>", "<plug>(CybuNext)")
 		end,
 	},
 }

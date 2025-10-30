@@ -1,4 +1,5 @@
 local autosaveGroup = vim.api.nvim_create_augroup('autosave', { clear = true })
+local aug = vim.api.nvim_create_augroup('aug', { clear = true })
 
 vim.api.nvim_create_autocmd({ 'BufLeave', 'InsertLeave', 'CursorHold' }, {
 	pattern = '*',
@@ -44,11 +45,23 @@ vim.api.nvim_create_autocmd({ 'VimEnter' }, {
 })
 
 
--- disable spellcheck for certain filetypes
-
 local disableSpellcheck = vim.api.nvim_create_augroup('disableSpellcheck', { clear = true })
 vim.api.nvim_create_autocmd({ 'FileType' }, {
+	desc = "Disable spellcheck for certain filetypes",
 	pattern = 'yaml',
 	group = disableSpellcheck,
 	command = 'setlocal nospell'
+})
+
+vim.api.nvim_create_autocmd("FocusGained", {
+	desc = "Reload files from disk when we focus vim",
+	pattern = "*",
+	command = "if getcmdwintype() == '' | checktime | endif",
+	group = aug,
+})
+vim.api.nvim_create_autocmd("BufEnter", {
+	desc = "Every time we enter an unmodified buffer, check if it changed on disk",
+	pattern = "*",
+	command = "if &buftype == '' && !&modified && expand('%') != '' | exec 'checktime ' . expand('<abuf>') | endif",
+	group = aug,
 })

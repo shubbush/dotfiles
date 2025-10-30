@@ -44,7 +44,7 @@ vim.o.foldtext = ""
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
-vim.o.statuscolumn = "%!v:lua.get_statuscol()"
+-- im.o.statuscolumn = "%!v:lua.get_statuscol()"
 
 -- Scroll
 vim.o.scrolloff = 8

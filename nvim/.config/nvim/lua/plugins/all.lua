@@ -13,6 +13,11 @@ return {
 	-- Themes
 	"projekt0n/github-nvim-theme",
 	"rose-pine/neovim",
+	{
+		"idr4n/github-monochrome.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 
 	{
 		"folke/which-key.nvim",

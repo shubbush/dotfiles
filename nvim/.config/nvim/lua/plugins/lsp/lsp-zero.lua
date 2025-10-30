@@ -16,7 +16,7 @@ function setupLspZero()
 		},
 	})
 
-	require 'lspconfig'.nil_ls.setup {
+	vim.lsp.config["nil_ls"] = {
 		settings = {
 			['nil'] = {
 				formatting = {
@@ -26,31 +26,33 @@ function setupLspZero()
 		},
 	}
 
-	require 'lspconfig'.gopls.setup {
-		settings = {
-			['gopls'] = {
-				codelenses = {
-					gc_details = false,
-					generate = true,
-					regenerate_cgo = true,
-					run_govulncheck = true,
-					test = true,
-					tidy = true,
-					upgrade_dependency = true,
-					vendor = false,
-				},
-				hints = {
-					assignVariableTypes = false,
-					compositeLiteralFields = false,
-					compositeLiteralTypes = false,
-					constantValues = false,
-					functionTypeParameters = false,
-					parameterNames = false,
-					rangeVariableTypes = false,
-				},
-			},
-		},
-	}
+
+
+	-- require 'lspconfig'.gopls.setup {
+	-- 	settings = {
+	-- 		['gopls'] = {qq
+	-- 			codelenses = {
+	-- 				gc_details = false,
+	-- 				generate = true,
+	-- 				regenerate_cgo = true,
+	-- 				run_govulncheck = true,
+	-- 				test = true,
+	-- 				tidy = true,
+	-- 				upgrade_dependency = true,
+	-- 				vendor = false,
+	-- 			},
+	-- 			hints = {
+	-- 				assignVariableTypes = false,
+	-- 				compositeLiteralFields = false,
+	-- 				compositeLiteralTypes = false,
+	-- 				constantValues = false,
+	-- 				functionTypeParameters = false,
+	-- 				parameterNames = false,
+	-- 				rangeVariableTypes = false,
+	-- 			},
+	-- 		},
+	-- 	},
+	-- }
 
 	lsp_zero.on_attach(function(client, bufnr)
 		local opts = { buffer = bufnr, remap = false }
