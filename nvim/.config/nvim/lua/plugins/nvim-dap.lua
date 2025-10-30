@@ -2,33 +2,36 @@ return {
 	{
 		"mfussenegger/nvim-dap",
 		config = function()
+			-- Register group name for which-key
+			vim.keymap.set("n", "<leader>d", "<nop>", { desc = '+debug/delete' })
+
 			vim.keymap.set("n", "<leader>dc", function()
 				require("dap").continue()
-			end)
+			end, { desc = 'Debug: Continue' })
 
 			vim.keymap.set("n", "<leader>dr", function()
 				require("dap").repl.toggle()
-			end)
+			end, { desc = 'Debug: Toggle REPL' })
 
 			vim.keymap.set("n", "<leader>dK", function()
 				require("dap.ui.widgets").hover()
-			end)
+			end, { desc = 'Debug: Hover' })
 
 			vim.keymap.set("n", "<leader>dt", function()
 				require("dap").toggle_breakpoint()
-			end)
+			end, { desc = 'Debug: Toggle breakpoint' })
 
 			vim.keymap.set("n", "<leader>dso", function()
 				require("dap").step_over()
-			end)
+			end, { desc = 'Debug: Step over' })
 
 			vim.keymap.set("n", "<leader>dsi", function()
 				require("dap").step_into()
-			end)
+			end, { desc = 'Debug: Step into' })
 
 			vim.keymap.set("n", "<leader>dl", function()
 				require("dap").run_last()
-			end)
+			end, { desc = 'Debug: Run last' })
 
 			-- Debug settings if you're using nvim-dap
 			local dap = require("dap")

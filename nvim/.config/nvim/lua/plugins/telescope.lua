@@ -12,12 +12,13 @@ return {
 			local telescopeConfig = require("telescope.config")
 			local actions = require("telescope.actions")
 
-			vim.keymap.set('n', '<C-p>', "<CMD>lua require'telescope-config'.project_files()<CR>", {})
-			vim.keymap.set('n', 'g/', builtin.live_grep, { desc = 'Telescope Live grep' })
-			vim.keymap.set('n', '<leader>pb', builtin.buffers, {})
-			vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+			vim.keymap.set('n', '<C-p>', "<CMD>lua require'telescope-config'.project_files()<CR>",
+				{ desc = 'Telescope: Find project files' })
+			vim.keymap.set('n', 'g/', builtin.live_grep, { desc = 'Telescope: Live grep' })
+			vim.keymap.set('n', '<leader>pb', builtin.buffers, { desc = 'Telescope: Open buffers' })
+			vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = 'Telescope: Help tags' })
 
-			vim.keymap.set('n', '<leader>;', builtin.commands, {})
+			vim.keymap.set('n', '<leader>;', builtin.commands, { desc = 'Telescope: Commands' })
 
 			-- extensions
 			telescope.load_extension("emoji")
@@ -88,11 +89,11 @@ return {
 			telescope.load_extension("ui-select")
 
 			-- LSP
-			vim.keymap.set("n", "<C-t>", builtin.lsp_dynamic_workspace_symbols)
-			vim.keymap.set("n", "<leader>lsd", builtin.lsp_document_symbols)
-			vim.keymap.set("n", "<leader>ld", builtin.diagnostics)
-			vim.keymap.set("n", "gi", builtin.lsp_implementations)
-			vim.keymap.set("n", "gr", builtin.lsp_references)
+			vim.keymap.set("n", "<C-t>", builtin.lsp_dynamic_workspace_symbols, { desc = 'LSP: Dynamic workspace symbols' })
+			vim.keymap.set("n", "<leader>lsd", builtin.lsp_document_symbols, { desc = 'LSP: Document symbols' })
+			vim.keymap.set("n", "<leader>ld", builtin.diagnostics, { desc = 'LSP: Diagnostics' })
+			vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = 'LSP: Go to implementations' })
+			vim.keymap.set("n", "gr", builtin.lsp_references, { desc = 'LSP: Go to references' })
 		end
 	}
 }

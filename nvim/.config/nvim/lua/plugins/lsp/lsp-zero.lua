@@ -56,37 +56,43 @@ function setupLspZero()
 
 	lsp_zero.on_attach(function(client, bufnr)
 		local opts = { buffer = bufnr, remap = false }
+
+		-- Register group names for which-key
+		vim.keymap.set("n", "<leader>l", "<nop>", { buffer = bufnr, desc = '+lsp' })
+		vim.keymap.set("n", "<leader>a", "<nop>", { buffer = bufnr, desc = '+all/diagnostics' })
+		vim.keymap.set("n", "<leader>r", "<nop>", { buffer = bufnr, desc = '+rename' })
+
 		-- LSP
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = 'LSP: Go to defenition' })
-		vim.keymap.set("n", "K", vim.lsp.buf.hover)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = 'LSP: Hover documentation' })
 
-		vim.keymap.set("n", "<leader>lcl", vim.lsp.codelens.run)
-		vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-		vim.keymap.set("n", "g.", vim.lsp.buf.code_action)
-		vim.keymap.set("n", "<leader>lrn", function() vim.lsp.buf.rename() end, opts)
-		vim.keymap.set("n", "<leader>lws", function() vim.lsp.buf.workspace_symbol() end, opts)
+		vim.keymap.set("n", "<leader>lcl", vim.lsp.codelens.run, { desc = 'LSP: Run codelens' })
+		vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, { buffer = bufnr, remap = false, desc = 'LSP: Signature help' })
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = 'LSP: Rename symbol' })
+		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = 'LSP: Format buffer' })
+		vim.keymap.set("n", "g.", vim.lsp.buf.code_action, { desc = 'LSP: Code actions' })
+		vim.keymap.set("n", "<leader>lrn", function() vim.lsp.buf.rename() end, { buffer = bufnr, remap = false, desc = 'LSP: Rename symbol' })
+		vim.keymap.set("n", "<leader>lws", function() vim.lsp.buf.workspace_symbol() end, { buffer = bufnr, remap = false, desc = 'LSP: Workspace symbols' })
 
 		-- Diagnostics
 		-- all workspace diagnostics
-		vim.keymap.set("n", "<leader>aa", vim.diagnostic.setqflist)
+		vim.keymap.set("n", "<leader>aa", vim.diagnostic.setqflist, { desc = 'Diagnostics: All workspace' })
 
 		-- all workspace errors
 		vim.keymap.set("n", "<leader>ae", function()
 			vim.diagnostic.setqflist({ severity = "E" })
-		end)
+		end, { desc = 'Diagnostics: All workspace errors' })
 
 		-- all workspace warnings
 		vim.keymap.set("n", "<leader>aw", function()
 			vim.diagnostic.setqflist({ severity = "W" })
-		end)
+		end, { desc = 'Diagnostics: All workspace warnings' })
 
 		-- buffer diagnostics only
-		vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist)
+		vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = 'Diagnostics: Buffer only' })
 
 		-- current line diagnostics only
-		vim.keymap.set("n", "<leader>e", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>')
+		vim.keymap.set("n", "<leader>e", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>', { desc = 'Diagnostics: Current line' })
 
 		vim.keymap.set("n", "[d", function()
 			vim.diagnostic.goto_prev({ wrap = false })
