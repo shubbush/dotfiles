@@ -20,8 +20,7 @@ function setupLspZero()
 		settings = {
 			['nil'] = {
 				formatting = {
-					command = { "nixpkgs-fmt" },
-				},
+					command = { "nixpkgs-fmt" }, },
 			},
 		},
 	}
@@ -57,6 +56,8 @@ function setupLspZero()
 	lsp_zero.on_attach(function(client, bufnr)
 		local opts = { buffer = bufnr, remap = false }
 
+		vim.o.foldexpr = "v:lua.vim.lsp.foldexpr()"
+
 		-- Register group names for which-key
 		vim.keymap.set("n", "<leader>l", "<nop>", { buffer = bufnr, desc = '+lsp' })
 		vim.keymap.set("n", "<leader>a", "<nop>", { buffer = bufnr, desc = '+all/diagnostics' })
@@ -67,12 +68,15 @@ function setupLspZero()
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = 'LSP: Hover documentation' })
 
 		vim.keymap.set("n", "<leader>lcl", vim.lsp.codelens.run, { desc = 'LSP: Run codelens' })
-		vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, { buffer = bufnr, remap = false, desc = 'LSP: Signature help' })
+		vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end,
+			{ buffer = bufnr, remap = false, desc = 'LSP: Signature help' })
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = 'LSP: Rename symbol' })
 		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = 'LSP: Format buffer' })
 		vim.keymap.set("n", "g.", vim.lsp.buf.code_action, { desc = 'LSP: Code actions' })
-		vim.keymap.set("n", "<leader>lrn", function() vim.lsp.buf.rename() end, { buffer = bufnr, remap = false, desc = 'LSP: Rename symbol' })
-		vim.keymap.set("n", "<leader>lws", function() vim.lsp.buf.workspace_symbol() end, { buffer = bufnr, remap = false, desc = 'LSP: Workspace symbols' })
+		vim.keymap.set("n", "<leader>lrn", function() vim.lsp.buf.rename() end,
+			{ buffer = bufnr, remap = false, desc = 'LSP: Rename symbol' })
+		vim.keymap.set("n", "<leader>lws", function() vim.lsp.buf.workspace_symbol() end,
+			{ buffer = bufnr, remap = false, desc = 'LSP: Workspace symbols' })
 
 		-- Diagnostics
 		-- all workspace diagnostics
@@ -92,7 +96,8 @@ function setupLspZero()
 		vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = 'Diagnostics: Buffer only' })
 
 		-- current line diagnostics only
-		vim.keymap.set("n", "<leader>e", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>', { desc = 'Diagnostics: Current line' })
+		vim.keymap.set("n", "<leader>e", '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<cr>',
+			{ desc = 'Diagnostics: Current line' })
 
 		vim.keymap.set("n", "[d", function()
 			vim.diagnostic.goto_prev({ wrap = false })

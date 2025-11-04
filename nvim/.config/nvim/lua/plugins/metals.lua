@@ -7,6 +7,7 @@ return {
 			"mfussenegger/nvim-dap",
 			"hrsh7th/cmp-nvim-lsp",
 		},
+		enabled = false,
 		config = function()
 			local api = vim.api
 

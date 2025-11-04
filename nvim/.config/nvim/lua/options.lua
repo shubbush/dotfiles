@@ -39,10 +39,12 @@ vim.o.foldcolumn = '0'
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
+vim.o.foldlevelstart = 1
 vim.o.foldtext = ""
-vim.o.foldenable = true
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.opt.foldnestmax = 1
+vim.o.foldminlines = 5
+-- vim.o.foldenable = true
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- im.o.statuscolumn = "%!v:lua.get_statuscol()"
 

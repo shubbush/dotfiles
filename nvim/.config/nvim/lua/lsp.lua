@@ -8,5 +8,5 @@ vim.fn.sign_define("DiagnosticSignInfo",
 vim.fn.sign_define("DiagnosticSignHint",
 	{ text = "󰌵", texthl = "DiagnosticSignHint" })
 
-
+-- vim.lsp.set_log_level(vim.log.levels.DEBUG)
 vim.lsp.enable("gopls")

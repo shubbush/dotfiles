@@ -38,22 +38,30 @@ require('github-monochrome').setup({
 		sidebars = "dark",
 		floats = "dark",
 	},
-	on_colors = function(c, s)
-		-- applies to all styles
-		-- c.bg = vim.o.background == "light" and c.bg or "#000000"
-		c.number = c.purple
+	on_colors = function(c)
+		-- modifies the color palette
+		c.comment = "#6e7781"
+		c.yellow = "#f39c11"
+		c.orange = "#BE5103"
+		c.red = "#D24545"
+		c.purple = "#724D8D"
+		c.magenta = "#8B008B"
+		c.bg_popup = c.bg_highlight
 
-		-- applies to 'light' style only
-		if s == "light" then
-			c.bg = "#F4F4F4"
-		end
+		return c
 	end,
 	on_highlights = function(hl, c, _)
 		-- applies to all styles
-		hl.CursorLineNr = { fg = c.fg, bold = true }
+		hl.CursorLineNr         = { fg = c.fg, bold = true }
+		hl.Search               = { fg = c.fg }
+		hl.MsgArea              = { fg = c.fg }
+
+		-- Neotree
+		hl.NeoTreeDirectoryIcon = { fg = c.fg }
+		hl.NeoTreeFileName      = { fg = c.fg }
 	end,
 })
-vim.cmd.colorscheme('github_light')
+vim.cmd.colorscheme('github-monochrome-light')
 
 
 require("hl_groups")

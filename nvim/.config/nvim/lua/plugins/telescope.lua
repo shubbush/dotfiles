@@ -5,6 +5,7 @@ return {
 			'nvim-lua/plenary.nvim',
 			'nvim-telescope/telescope-ui-select.nvim'
 		},
+		enabled = false,
 		config = function()
 			local telescope = require('telescope')
 			local telescopeConfigLua = require('telescope-config')

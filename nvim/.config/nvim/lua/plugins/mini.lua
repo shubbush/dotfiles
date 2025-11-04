@@ -14,4 +14,12 @@ return {
 			require('mini.pairs').setup()
 		end
 	},
+
+	{
+		'echasnovski/mini.pick',
+		version = '*',
+		config = function()
+			require('mini.pick').setup()
+		end
+	},
 }
