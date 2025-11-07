@@ -6,11 +6,12 @@ font-family = Cascadia Code
 adjust-cell-width = 1
 adjust-cell-height = 3
 
-font-size = 15
+font-size = 14
 
-command = /opt/homebrew/bin/tmux attach || tmux
+command = tmux attach || tmux
 
 window-padding-x = 6
 window-padding-y = 6
 
 # bold-is-bright = true
+cursor-style = block
