@@ -5,9 +5,9 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"mfussenegger/nvim-dap",
-			"hrsh7th/cmp-nvim-lsp",
+			-- "hrsh7th/cmp-nvim-lsp",
 		},
-		enabled = false,
+		enabled = true,
 		config = function()
 			local api = vim.api
 
@@ -27,7 +27,7 @@ return {
 				verboseCompilation = true,
 			}
 			metals_config.init_options.statusBarProvider = "off"
-			metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 
 			metals_config.on_attach = function(client, bufnr)
@@ -49,7 +49,7 @@ return {
 
 
 			-- Example if you are using cmp how to make sure the correct capabilities for snippets are set
-			metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 		end
 	}
 }
