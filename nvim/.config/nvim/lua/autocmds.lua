@@ -1,16 +1,16 @@
-local autosaveGroup = vim.api.nvim_create_augroup('autosave', { clear = true })
-local aug = vim.api.nvim_create_augroup('aug', { clear = true })
+local autosaveGroup = vim.api.nvim_create_augroup("autosave", { clear = true })
+local aug = vim.api.nvim_create_augroup("aug", { clear = true })
 
-vim.api.nvim_create_autocmd({ 'BufLeave', 'InsertLeave', 'CursorHold' }, {
-	pattern = '*',
+vim.api.nvim_create_autocmd({ "BufLeave", "InsertLeave", "CursorHold" }, {
+	pattern = "*",
 	group = autosaveGroup,
-	command = 'silent! update'
+	command = "silent! update",
 })
 
-vim.api.nvim_create_autocmd({ 'FocusLost' }, {
-	pattern = '*',
+vim.api.nvim_create_autocmd({ "FocusLost" }, {
+	pattern = "*",
 	group = autosaveGroup,
-	command = 'silent! wa'
+	command = "silent! wa",
 })
 
 function FormatAndEnableDiagnostics()
@@ -21,13 +21,12 @@ function FormatAndEnableDiagnostics()
 end
 
 -- format on save
-local formatOnSave = vim.api.nvim_create_augroup('autoformat', { clear = true })
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-	pattern = '*',
+local formatOnSave = vim.api.nvim_create_augroup("autoformat", { clear = true })
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	pattern = "*",
 	group = formatOnSave,
-	command = 'lua FormatAndEnableDiagnostics()'
+	command = "lua FormatAndEnableDiagnostics()",
 })
-
 
 -- when directory is opened set it as the current working directory
 function SetWorkingDir()
@@ -37,20 +36,19 @@ function SetWorkingDir()
 	end
 end
 
-local setWorkingDir = vim.api.nvim_create_augroup('setworkingdir', { clear = true })
-vim.api.nvim_create_autocmd({ 'VimEnter' }, {
-	pattern = '*',
+local setWorkingDir = vim.api.nvim_create_augroup("setworkingdir", { clear = true })
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	pattern = "*",
 	group = setWorkingDir,
-	command = 'lua SetWorkingDir()'
+	command = "lua SetWorkingDir()",
 })
 
-
-local disableSpellcheck = vim.api.nvim_create_augroup('disableSpellcheck', { clear = true })
-vim.api.nvim_create_autocmd({ 'FileType' }, {
+local disableSpellcheck = vim.api.nvim_create_augroup("disableSpellcheck", { clear = true })
+vim.api.nvim_create_autocmd({ "FileType" }, {
 	desc = "Disable spellcheck for certain filetypes",
-	pattern = 'yaml',
+	pattern = "yaml",
 	group = disableSpellcheck,
-	command = 'setlocal nospell'
+	command = "setlocal nospell",
 })
 
 vim.api.nvim_create_autocmd("FocusGained", {

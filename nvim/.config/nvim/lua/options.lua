@@ -6,9 +6,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.laststatus = 2
-vim.opt.syntax = 'ON'
+vim.opt.syntax = "ON"
 vim.opt.showmode = false
-vim.opt.background = 'light'
+vim.opt.background = "light"
 vim.opt.cursorline = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -35,7 +35,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = false
 
 -- Fold
-vim.o.foldcolumn = '0'
+vim.o.foldcolumn = "0"
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 99
@@ -66,6 +66,8 @@ vim.g.vim_markdown_no_default_key_mappings = 1
 vim.g.vim_markdown_new_list_item_indent = 1
 vim.g.vim_markdown_auto_insert_bullets = 1
 
+-- Sessions
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 vim.o.langmap =
 "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"

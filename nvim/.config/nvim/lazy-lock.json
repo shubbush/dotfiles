@@ -1,4 +1,5 @@
 {
+  "auto-session": { "branch": "main", "commit": "292492ab7af4bd8b9e37e28508bc8ce995722fd5" },
   "blink.cmp": { "branch": "main", "commit": "327fff91fe6af358e990be7be1ec8b78037d2138" },
   "copilot.vim": { "branch": "release", "commit": "da369d90cfd6c396b1d0ec259836a1c7222fb2ea" },
   "cybu.nvim": { "branch": "main", "commit": "c8a8c71cd0e38d4165b02819dfdc32dedc35a6b6" },

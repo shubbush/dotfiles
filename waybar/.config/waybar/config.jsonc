@@ -110,7 +110,7 @@
 			"format": "",
 			"format-disabled": "󰂲",
 			"format-off": "󰂲",
-      "on-click": "blueberry",
+      "on-click": "omarchy-launch-bluetooth",
 			"tooltip-format": "{device_enumerate}",
 "tooltip-format-enumerate-connected": "• {device_alias}"
 		},
