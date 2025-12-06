@@ -8,22 +8,25 @@ return {
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
 		},
-		init = function()
-			vim.api.nvim_create_autocmd('BufEnter', {
-				-- make a group to be able to delete it later
-				group = vim.api.nvim_create_augroup('NeoTreeInit', { clear = true }),
-				callback = function()
-					local f = vim.fn.expand('%:p')
-					if vim.fn.isdirectory(f) ~= 0 then
-						vim.cmd('Neotree current dir=' .. f)
-						-- neo-tree is loaded now, delete the init autocmd
-						vim.api.nvim_clear_autocmds { group = 'NeoTreeInit' }
-					end
-				end
-			})
-		end,
+		-- init = function()
+		-- 	vim.api.nvim_create_autocmd("BufEnter", {
+		-- 		-- make a group to be able to delete it later
+		-- 		group = vim.api.nvim_create_augroup("NeoTreeInit", { clear = true }),
+		-- 		callback = function()
+		-- 			local bufs = vim.api.nvim_list_bufs()
+		-- 			print("bufs" .. #bufs)
+		-- 			print("name " .. vim.api.nvim_buf_get_name(bufs[1]))
+		-- 			local f = vim.fn.getcwd()
+		-- 			if vim.fn.isdirectory(f) ~= 0 then
+		-- 				vim.cmd("Neotree current dir=" .. f)
+		-- 				-- neo-tree is loaded now, delete the init autocmd
+		-- 				vim.api.nvim_clear_autocmds({ group = "NeoTreeInit" })
+		-- 			end
+		-- 		end,
+		-- 	})
+		-- end,
 		keys = {
-			{ "-", "<cmd>Neotree toggle<cr>",        desc = "Toggle Neotree" },
+			{ "-", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
 			{ "_", "<cmd>Neotree reveal toggle<cr>", desc = "Toggle Neotree" },
 		},
 		config = function()
@@ -35,14 +38,13 @@ return {
 					position = "float",
 				},
 				filesystem = {
-					hijack_netrw_behavior = "open_current",
+					-- hijack_netrw_behavior = "open_current",
 					filtered_items = {
 						visible = true,
 						hide_dotfiles = false,
 					},
 				},
-
 			})
-		end
+		end,
 	},
 }

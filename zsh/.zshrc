@@ -82,7 +82,6 @@ fi
 alias dc=cd
 alias v=nvim
 alias docker=podman
-alias notes="v ~/notes/"
 alias ghpr="gh pr create --fill --draft && gh pr view -w"
 export EDITOR=nvim
 
@@ -93,6 +92,12 @@ alias df="df -h"           # -h prints human readable format
 alias grep="grep -i"       # -i ignore case
 
 eval "$(starship init zsh)"
+
+notes ()
+{
+	cd ~/notes
+  v
+}
 
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
