@@ -59,7 +59,7 @@ vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 
 -- Markdown
 -- vim.g.markdown_syntax_conceal = 2
-vim.g.markdown_fenced_languages = { 'scala', 'json' }
+vim.g.markdown_fenced_languages = { "scala", "json" }
 vim.g.markdown_folding = 1
 vim.g.vim_markdown_folding_style_pythonic = 1
 vim.g.vim_markdown_no_default_key_mappings = 1
@@ -69,5 +69,8 @@ vim.g.vim_markdown_auto_insert_bullets = 1
 -- Sessions
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
+-- Undo
+vim.opt.undofile = true
+
 vim.o.langmap =
-"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+	"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
