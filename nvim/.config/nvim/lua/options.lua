@@ -30,9 +30,9 @@ vim.opt.wrap = true
 vim.opt.breakindent = true
 
 -- Tab
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = false
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
 
 -- Fold
 vim.o.foldcolumn = "0"
@@ -65,6 +65,9 @@ vim.g.vim_markdown_folding_style_pythonic = 1
 vim.g.vim_markdown_no_default_key_mappings = 1
 vim.g.vim_markdown_new_list_item_indent = 1
 vim.g.vim_markdown_auto_insert_bullets = 1
+vim.g.markdown_recommended_style = 0
+
+vim.o.formatoptions = "rtcqjon"
 
 -- Sessions
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
