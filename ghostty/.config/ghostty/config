@@ -8,7 +8,7 @@ adjust-cell-height = 3
 
 font-size = 14
 
-command = tmux attach || tmux
+command = ~/dotfiles/ghostty/.config/ghostty/start-tmux.sh
 
 window-padding-x = 6
 window-padding-y = 6
