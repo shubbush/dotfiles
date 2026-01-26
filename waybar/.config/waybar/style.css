@@ -250,3 +250,12 @@ window#waybar.hidden {
         color: #000000;
     }
 }
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 7.5px;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
+}
