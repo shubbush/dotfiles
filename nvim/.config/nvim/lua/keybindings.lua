@@ -41,10 +41,12 @@ vim.keymap.set('n', "Q", "<nop>", { desc = 'Disable Ex mode' })
 vim.keymap.set('n', "<Left>", "<cmd>bp<CR>", { desc = 'Previous buffer' })
 vim.keymap.set('n', "<Right>", "<cmd>bn<CR>", { desc = 'Next buffer' })
 
+vim.keymap.set('n', "<leader>q", "<cmd>:bprevious <bar> bdelete #<CR>", { desc = 'Close buffer' })
+
 -- Toggle zen mode
 vim.api.nvim_set_keymap(
-	"n",
-	"<leader>zm",
-	":ZenMode<CR>",
-	{ noremap = true, desc = 'Toggle zen mode' }
+  "n",
+  "<leader>zm",
+  ":ZenMode<CR>",
+  { noremap = true, desc = 'Toggle zen mode' }
 )
