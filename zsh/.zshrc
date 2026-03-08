@@ -2,7 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 fpath=( ~/.zfuncs "${fpath[@]}" )
 
-autoload -Uz compinit compinit -i
+autoload -Uz compinit
+
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
