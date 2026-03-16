@@ -15,3 +15,6 @@ window-padding-y = 6
 
 # bold-is-bright = true
 cursor-style = block
+
+# Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
+async-backend = epoll

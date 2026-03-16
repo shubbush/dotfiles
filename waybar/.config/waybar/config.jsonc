@@ -96,6 +96,7 @@
             "phone": "",
             "portable": "",
             "car": "",
+      "headset": "",
             "default": ["", "", ""]
         },
         "on-click": "$TERMINAL --class=Wiremix -e wiremix",
@@ -179,6 +180,18 @@
     "tooltip": true,
     "on-click-right": "omarchy-voxtype-config",
     "on-click": "omarchy-voxtype-model"
+  },
+  "custom/idle-indicator": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
+  },
+  "custom/notification-silencing-indicator": {
+    "on-click": "omarchy-toggle-notification-silencing",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "signal": 10,
+    "return-type": "json"
   },
     "tray": {
         "icon-size": 16,

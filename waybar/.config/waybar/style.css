@@ -259,3 +259,8 @@ window#waybar.hidden {
 #custom-voxtype.recording {
   color: #a55555;
 }
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #a55555;
+}
