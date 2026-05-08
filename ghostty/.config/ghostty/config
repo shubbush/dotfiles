@@ -1,7 +1,7 @@
 # Theme
 config-file = theme/config
 
-font-family = Cascadia Code
+font-family = Cascadia Code NF
 
 adjust-cell-width = 1
 adjust-cell-height = 3
