@@ -2,7 +2,6 @@ return {
 	"rmagatti/auto-session",
 	lazy = false,
 	dependencies = {
-		"nvim-neo-tree/neo-tree.nvim",
 	},
 
 	---enables autocomplete for opts
